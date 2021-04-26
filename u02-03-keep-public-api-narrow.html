@@ -1,0 +1,248 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js rust">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Keep Public API as Narrow as Possible - Golocron – Software Development With Go</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Design software for change">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "coal" : "rust";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="00-intro.html">Golocron</a></li><li class="chapter-item expanded affix "><li class="part-title">The Style Guide</li><li class="chapter-item expanded "><a href="u01-00-introduction.html"><strong aria-hidden="true">1.</strong> Project Layout</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="u01-01-good-and-bad-layout.html"><strong aria-hidden="true">1.1.</strong> Good and Bad Layout</a></li><li class="chapter-item expanded "><a href="u01-02-types-of-layouts.html"><strong aria-hidden="true">1.2.</strong> Types of Layouts</a></li><li class="chapter-item expanded "><a href="u01-03-common.html"><strong aria-hidden="true">1.3.</strong> Common</a></li><li class="chapter-item expanded "><a href="u01-04-library.html"><strong aria-hidden="true">1.4.</strong> Library</a></li><li class="chapter-item expanded "><a href="u01-05-single-application.html"><strong aria-hidden="true">1.5.</strong> Single Application</a></li><li class="chapter-item expanded "><a href="u01-06-monorepo.html"><strong aria-hidden="true">1.6.</strong> Monolithic Repository</a></li><li class="chapter-item expanded "><a href="u01-07-monorepo-extra.html"><strong aria-hidden="true">1.7.</strong> Monorepo: Additional Chapters</a></li><li class="chapter-item expanded "><a href="u01-08-versioning-and-go.html"><strong aria-hidden="true">1.8.</strong> Versioning and Go</a></li><li class="chapter-item expanded "><a href="u01-09-notes-on-release-notes.html"><strong aria-hidden="true">1.9.</strong> Notes on Release Notes</a></li><li class="chapter-item expanded "><a href="u01-10-summary.html"><strong aria-hidden="true">1.10.</strong> Summary</a></li></ol></li><li class="chapter-item expanded "><a href="u02-00-introduction.html"><strong aria-hidden="true">2.</strong> Package Layout</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="u02-01-what-is-a-package.html"><strong aria-hidden="true">2.1.</strong> What is a Package</a></li><li class="chapter-item expanded "><a href="u02-02-when-to-create-a-package.html"><strong aria-hidden="true">2.2.</strong> When to Create a Package</a></li><li class="chapter-item expanded "><a href="u02-03-keep-public-api-narrow.html" class="active"><strong aria-hidden="true">2.3.</strong> Keep Public API as Narrow as Possible</a></li><li class="chapter-item expanded "><a href="u02-04-the-main-package.html"><strong aria-hidden="true">2.4.</strong> The Main Package</a></li><li class="chapter-item expanded "><a href="u02-05-package-provides-something.html"><strong aria-hidden="true">2.5.</strong> Package Provides Something</a></li><li class="chapter-item expanded "><a href="u02-06-naming-a-package.html"><strong aria-hidden="true">2.6.</strong> Naming a Package</a></li><li class="chapter-item expanded "><a href="u02-07-structure.html"><strong aria-hidden="true">2.7.</strong> Structure</a></li><li class="chapter-item expanded "><a href="u02-08-files-in-a-package.html"><strong aria-hidden="true">2.8.</strong> Files in a Package</a></li><li class="chapter-item expanded "><a href="u02-09-cross-platform-code.html"><strong aria-hidden="true">2.9.</strong> Cross-Platform Code</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="u02-10-basic-principles-cp.html"><strong aria-hidden="true">2.9.1.</strong> Basic Principles of Writing Cross-Platform Code</a></li><li class="chapter-item expanded "><a href="u02-11-cp-options-in-go.html"><strong aria-hidden="true">2.9.2.</strong> Cross-Platform Options in Go</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.10.</strong> Package and File Organisation</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.11.</strong> Summary</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> File Layout</div></li><li class="chapter-item expanded affix "><li class="part-title">Foundation</li><li class="chapter-item expanded affix "><li class="part-title">Application Design</li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Golocron – Software Development With Go</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="keep-public-api-as-narrow-as-possible"><a class="header" href="#keep-public-api-as-narrow-as-possible">Keep Public API as Narrow as Possible</a></h2>
+<p>Keep the public API of a package as narrow as possible. Put another way, keep the number of exported objects and elements at a minimum.</p>
+<p>To understand why this is important, we need to remember a few things. First, packages in Go are building blocks, and a unit of distribution. A useful library  found on the net is often a single package. A useful piece of software is made of a set of packages. Therefore, the API surface of a project is a superset of APIs of all packages in it. This makes it very important to design each individual package mindfully and consciously.</p>
+<p>Second, in the vast majority of cases, it is the behaviour what software provides us with, not the concrete features. In other words, we're more interested in accomplishing a task by making the library do something we need, rather than in what fields are available on the library's objects. A library that exposes only behaviour, or behaviour and a minimum of features, is easier to both, use and maintain. Packages with lots of details exposed to the user tend to increase cognitive load: users are forced to think more than they really need to use the library, and authors have to keep in mind how each change would affect the user.</p>
+<p>Third, one characteristic of a great software is that it is impossible or hard to misuse it. In other words, good libraries tend to minimise the risk of error by being designed and implemented in a way that helps to use it correctly. Such libraries also have minimal to no side effects, often secure by default, have and modest resource consumption.</p>
+<p>Fourth, the only thing that is constant about software is CHANGE. Change means maintenance, finding and fixing bugs, changing implementation details for good, such as performance or security, adding new features, and more. As people use the software, they become more dependent on it. If a library does something valuable, it may become popular, and this is where things get complicated. The more people use the library, and the longer they do it, the harder it is to introduce changes, and the higher the risk of breaking others' systems. Even a simple update might take a long period of time to introduce, and even longer to be fully adopted by the users.</p>
+<p><strong>When writing software, you need to plan and organise it in such a way as to maximise the ability to change as much as you can, as fast as you can.</strong> In the context of package planning and design, this means that you need to keep the number of exported objects and elements at a possible minimum, and expose behaviour with a reasonable amount of features. This helps to:</p>
+<ul>
+<li>hide implementation details</li>
+<li>make maintenance easier for both, authors and users</li>
+<li>reduce dependency of the user's software on your software</li>
+<li>allow introducing changes faster.</li>
+</ul>
+<p>At this point we know what a package is, when to create one, and that it's important to design it carefully. A more practical advice on how to achieve most of these goals in code will be discussed further in this and following units. The primary focus of the remainder of this unit is the structure of a package. We start with a very special one, <code>main</code>, and then survey guidelines for regular packages.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="u02-02-when-to-create-a-package.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="u02-04-the-main-package.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="u02-02-when-to-create-a-package.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="u02-04-the-main-package.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

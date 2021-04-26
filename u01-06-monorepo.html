@@ -1,0 +1,479 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js rust">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Monolithic Repository - Golocron – Software Development With Go</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Design software for change">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "coal" : "rust";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="00-intro.html">Golocron</a></li><li class="chapter-item expanded affix "><li class="part-title">The Style Guide</li><li class="chapter-item expanded "><a href="u01-00-introduction.html"><strong aria-hidden="true">1.</strong> Project Layout</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="u01-01-good-and-bad-layout.html"><strong aria-hidden="true">1.1.</strong> Good and Bad Layout</a></li><li class="chapter-item expanded "><a href="u01-02-types-of-layouts.html"><strong aria-hidden="true">1.2.</strong> Types of Layouts</a></li><li class="chapter-item expanded "><a href="u01-03-common.html"><strong aria-hidden="true">1.3.</strong> Common</a></li><li class="chapter-item expanded "><a href="u01-04-library.html"><strong aria-hidden="true">1.4.</strong> Library</a></li><li class="chapter-item expanded "><a href="u01-05-single-application.html"><strong aria-hidden="true">1.5.</strong> Single Application</a></li><li class="chapter-item expanded "><a href="u01-06-monorepo.html" class="active"><strong aria-hidden="true">1.6.</strong> Monolithic Repository</a></li><li class="chapter-item expanded "><a href="u01-07-monorepo-extra.html"><strong aria-hidden="true">1.7.</strong> Monorepo: Additional Chapters</a></li><li class="chapter-item expanded "><a href="u01-08-versioning-and-go.html"><strong aria-hidden="true">1.8.</strong> Versioning and Go</a></li><li class="chapter-item expanded "><a href="u01-09-notes-on-release-notes.html"><strong aria-hidden="true">1.9.</strong> Notes on Release Notes</a></li><li class="chapter-item expanded "><a href="u01-10-summary.html"><strong aria-hidden="true">1.10.</strong> Summary</a></li></ol></li><li class="chapter-item expanded "><a href="u02-00-introduction.html"><strong aria-hidden="true">2.</strong> Package Layout</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="u02-01-what-is-a-package.html"><strong aria-hidden="true">2.1.</strong> What is a Package</a></li><li class="chapter-item expanded "><a href="u02-02-when-to-create-a-package.html"><strong aria-hidden="true">2.2.</strong> When to Create a Package</a></li><li class="chapter-item expanded "><a href="u02-03-keep-public-api-narrow.html"><strong aria-hidden="true">2.3.</strong> Keep Public API as Narrow as Possible</a></li><li class="chapter-item expanded "><a href="u02-04-the-main-package.html"><strong aria-hidden="true">2.4.</strong> The Main Package</a></li><li class="chapter-item expanded "><a href="u02-05-package-provides-something.html"><strong aria-hidden="true">2.5.</strong> Package Provides Something</a></li><li class="chapter-item expanded "><a href="u02-06-naming-a-package.html"><strong aria-hidden="true">2.6.</strong> Naming a Package</a></li><li class="chapter-item expanded "><a href="u02-07-structure.html"><strong aria-hidden="true">2.7.</strong> Structure</a></li><li class="chapter-item expanded "><a href="u02-08-files-in-a-package.html"><strong aria-hidden="true">2.8.</strong> Files in a Package</a></li><li class="chapter-item expanded "><a href="u02-09-cross-platform-code.html"><strong aria-hidden="true">2.9.</strong> Cross-Platform Code</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="u02-10-basic-principles-cp.html"><strong aria-hidden="true">2.9.1.</strong> Basic Principles of Writing Cross-Platform Code</a></li><li class="chapter-item expanded "><a href="u02-11-cp-options-in-go.html"><strong aria-hidden="true">2.9.2.</strong> Cross-Platform Options in Go</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.10.</strong> Package and File Organisation</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.11.</strong> Summary</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> File Layout</div></li><li class="chapter-item expanded affix "><li class="part-title">Foundation</li><li class="chapter-item expanded affix "><li class="part-title">Application Design</li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Golocron – Software Development With Go</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="monolithic-repository"><a class="header" href="#monolithic-repository">Monolithic Repository</a></h2>
+<p><em>Warning:</em> Do not confuse a monolithic repository with a monolithic application. They're absolutely different things.</p>
+<p>Unless you're in one of the <a href="https://en.wikipedia.org/wiki/Big_Tech">FAANG</a> or similarly-sized companies, or just don't like the idea, there are probably few technical reasons, if any, against using the <a href="https://en.wikipedia.org/wiki/Monorepo">monorepo</a> approach to organising a project that has multiple moving parts. And Go projects can benefit quite well from it.</p>
+<p>Moreover, teams are likely to benefit from this technique as it has several strong supporting arguments like:</p>
+<ul>
+<li>simplified workflows for CI/CD and testing</li>
+<li>reduced burden with managing internal dependencies</li>
+<li>significantly less chores with permissions/access</li>
+<li>unified tooling</li>
+<li>easier to package/ship and so forth.</li>
+</ul>
+<p>Of course, there are some limitations and downsides, but they are not in effect until after at least a couple of hundreds of thousands SLOCs have been committed in a couple of millions of commits.</p>
+<p>A valid concern may be access control, but that's only partially true. If the security policies at a company do make sense and implemented and respected well, there is little to worry about. Experience of companies for which security <strong>is</strong> the biggest asset, suggests that the attitude and mindset are what matter. When everyone is accountable for what they're doing, there is no need in introducing artificial barriers.</p>
+<p>The decision on whether to use a monorepo or not is upon you, the reader. The goal of this section is not to make you use this approach, although it makes sense rather often than not. This work covers various aspects of software development, is based on experience, and provides practical advice and guidelines. Several services will be introduced in the third module (it's quite far from this point), and the materials <em>do use</em> a monolithic repository.</p>
+<p>With that in mind, further we talk about how to structure a monorepo in a way that makes the experience of using it better. As there are several ways to approach organising a monorepo, and to understand what makes a good one, it's worth getting familiar with some of them. Finally, one reasonable approach will be introduced, and we'll learn more about it.</p>
+<p>There is no official classification for monolithic repositories. Yet some of common traits can be derived after investigating and working with different projects. The experience shows that most of the time a monorepo is of one of the following types:</p>
+<ul>
+<li>naive</li>
+<li>based on services</li>
+<li>focused on entities.</li>
+</ul>
+<p>Let's have a quick look at these and consider their pros and cons. Then we introduce an alternative, the structured approach.</p>
+<h3 id="naive-monorepo"><a class="header" href="#naive-monorepo">Naive Monorepo</a></h3>
+<p>A naive monorepo is exactly what its name says. It's what usually happens when a team decides to use a monorepo, without taking the time to learn and putting a good thought into how to make it work:</p>
+<ul>
+<li>a new repository is created</li>
+<li>then each of the existing services is copied over to the new repo, as is</li>
+<li>done</li>
+<li>alternatively, everything can be moved into one of the existing repositories, but this doesn't do much of a difference.</li>
+</ul>
+<p>As a result, the team got just a rather large directory with lots of semi-independent parts, lots of duplicated scripts, files, words, whatnot. One of the immediate benefits <em>seems to be</em> that now something from service A can be imported by service B, but this will quickly become troublesome, especially if the original repositories did not follow the suggestions (such as) listed above, which is highly likely.</p>
+<p>This approach has many downsides. Besides being messy and containing many duplications, it is the shortest path to creating dependency cycles. This can often lead to either a poor hierarchy and structure that is created just for the sake of breaking a cycle, or even to concluding that the monorepo was a mistake, and should be avoided. Neither of the those leads to productive and efficient collaboration.</p>
+<p>It's hard to justify following this way. Instead, plan the migration, and then execute the plan iteratively. You need to come up with a good structure that suits well and will serve your needs for years. Don't rush, think, plan, try, and only then execute. Not the other way around.</p>
+<p>After having realised that this way is not better than it was before the move, the team may decide to organise the repository somehow. One of obvious ways is to use a service as a boundary and splitting criterion. This is how a naive monorepo may evolve to a service-based one.</p>
+<h3 id="service-based-monorepo"><a class="header" href="#service-based-monorepo">Service-Based Monorepo</a></h3>
+<p>The service-based approach is a slight improvement of naive. The main difference is that some of the duplicated components among services are unified, e.g. CI and building routines, but the codebase continues using services as boundaries for packages. Put simply, each folder at the root level contains a service along with everything that's in the service's scope - data types, business and transport logic, etc. When a service needs something that's already implemented somewhere, it just imports that. New functionality is being developed within the boundaries of a service.</p>
+<p>While it might work for some time, such a repository still has exactly the same major downside as naive - it's too easy to end up with a dependency cycle, more so when you try to re-use some code with business logic. Also, there isn't much of an order, since data, logic and utility code are spread across the entire codebase.</p>
+<p>A few other serious downsides enter the stage at this point, caused by importing different parts of various services:</p>
+<ul>
+<li>increased sizes of binaries</li>
+<li>increased compilation times</li>
+<li>not always clear what to do with tests.</li>
+</ul>
+<p>As the project evolves, it might seem natural to think of grouping code based on entities it belongs to. Here is how a monorepo may transform into entity-focused.</p>
+<h3 id="entity-focused-monorepo"><a class="header" href="#entity-focused-monorepo">Entity-Focused Monorepo</a></h3>
+<p>The entity-focused technique is organising code around a particular entity. Packages are often created for different units of the business domain of a project, such as <code>user</code>, <code>photo</code>, <code>library</code> and so forth. Developers add logic into appropriate packages, and then use it in services.</p>
+<p>This approach is a bit better than the previous two. It allows for working on services' part separately from the business logic, if implemented correctly.</p>
+<p>Still, there are two potential problems:</p>
+<ul>
+<li>different levels of representation and responsibility could be mixed together, such as data types, methods for accessing storage, business logic and transport details</li>
+<li>a major risk in creating cycles, specifically at three levels:
+<ul>
+<li>entity - when several entities depend on each other</li>
+<li>business logic - when a business process depends on the logic of several entities</li>
+<li>transport and representation - when representations of several entities/processes depend on each other.</li>
+</ul>
+</li>
+</ul>
+<p>The second issue comes from a fact that it's rare for entities, business logic and their representations to be independent from each other, i.e.:</p>
+<ul>
+<li>entities often aggregate or are parts of other entities</li>
+<li>business logic for one process depends or is included into another process</li>
+<li>representation for one area of the domain requires other parts.</li>
+</ul>
+<p>Is there a solution to address these and the problems described above? How to organise a repository in a way which reduces the dependency cycle risk to a minimum (or better to zero)? How to organise a repository in a way when it's easy to re-use entities and logic in different services? How to make developers happier, and services better organised?</p>
+<p>The first problem is to be addressed by making better package and architectural design decisions. The former is the subject for Unit 2 in this module, the latter is the topic for Module 3. Some suggestions will be given shortly, in the very next section.</p>
+<p>There is no ultimate solution, of course. But there is an option which, if implemented carefully and everyone respects the process, can help to achieve better efficiency and maintainability.</p>
+<h3 id="the-structured-monorepo"><a class="header" href="#the-structured-monorepo">The Structured Monorepo</a></h3>
+<p>The structured approach is based on grouping code by responsibilities, and levels where objects play their roles. In other words, things are put together by what they do and where they belong:</p>
+<ul>
+<li>data layer (models)</li>
+<li>database layer (repositories)</li>
+<li>business processes (controllers)</li>
+<li>transport representations (handlers) and so on.</li>
+</ul>
+<p>By doing this way, we avoid problems described above, and get some additional benefits:</p>
+<ul>
+<li>at the model level, any model can safely relate to another</li>
+<li>at the business process level, any process is free to do the following, without the risk of introducing a cycle:
+<ul>
+<li>use any model or combine multiple</li>
+<li>include any other business process, or be included in other business process, as a step</li>
+<li>interact with database representations for the models it works with</li>
+</ul>
+</li>
+<li>similarly, at the transport level, any service can use or combine various business processes, and more.</li>
+</ul>
+<p>The insightful reader might have already noticed that this has many similarities with properly designing and structuring a good single service. Moreover, if a single service has followed this way, adding another service wouldn't even require to do anything, since the project, hence the repo, is already prepared to accommodate as many applications as needed.</p>
+<h3 id="the-layout-of-a-structured-monorepo"><a class="header" href="#the-layout-of-a-structured-monorepo">The Layout of a Structured Monorepo</a></h3>
+<p>Everything that has been discussed about different layouts so far comes together and applies to a monolithic repository. Taken into account, implemented and followed carefully, the practices establish the foundation for a good monorepo.</p>
+<p>This is what a project may look like at this point:</p>
+<ul>
+<li>the documentation is provided and up to date</li>
+<li>the list of elements at any level is of a reasonable size</li>
+<li>all maintenance scripts and other non-code files are organised</li>
+<li>the entry points to services are located in the <code>cmd</code> directory</li>
+<li>the binaries automatically go and picked up from the <code>bin</code> directory</li>
+<li>code that implements the project's data and logic is grouped by responsibilities and roles.</li>
+</ul>
+<p>A few questions inevitably arise while working on a reasonably large project within one or a couple of teams:</p>
+<ul>
+<li>Where do we put code that is meant to be used by many services?</li>
+<li>Where should utility code go?</li>
+<li>How to gradually and safely introduce something new or a breaking change?</li>
+</ul>
+<p>There is no simple and direct answer. It's also where good planning and thinking should be done, as well as some exceptions. With that in mind, let's consider the following suggestions that help to keep things at the right places:</p>
+<ul>
+<li>use appropriate position at the file tree to reflect the importance of a package</li>
+<li>organise utility code as own small standard library</li>
+<li>keep breaking changes in sandbox.</li>
+</ul>
+<h4 id="use-appropriate-position-at-the-file-tree"><a class="header" href="#use-appropriate-position-at-the-file-tree">Use Appropriate Position at the File Tree</a></h4>
+<p>Place packages appropriately in the file tree of a monolithic repository to reflect the importance and nature of a package.</p>
+<p>What does it mean and what properties can we use to determine a right placement of a package? There's no hard set of rules. The following heuristics can help in understanding where a package should be placed:</p>
+<ul>
+<li>An approximate position of a package in the dependency graph.
+A package that is imported by many other different packages should be located closer to the root of the hierarchy. A rarely imported package is most likely an implementation detail, and should go deeper in the tree.</li>
+<li>The frequency of use.
+The position of a package is in direct proportion to of how frequently the package is used.</li>
+<li>The importance of a package.
+Something that is unique, and provides and implements an important piece of functionality should be placed closer to the top.</li>
+<li>The level of abstraction and role.
+The higher the abstraction, the higher the level at which a package should be placed.</li>
+</ul>
+<p>For example, a package with code for converting internal errors from their internal representation to the external, and which is used by the most of the packages that implement application functionality, should be placed at the top level of the structure.</p>
+<p>Another example is the packages that <em>are</em> the definitions of the business logic  - packages with models, controllers, and the database layer.</p>
+<p>On the other hand, a set of middleware handlers for an API should be located deeper in the tree, as it's used only in the context of API, and only by an instance of API. Similarly, routines for data validation, migrations, etc are better to be placed at the second or third level of the tree.</p>
+<p>More on this to come in later units covering package design and architecture of a service.</p>
+<h4 id="organise-utility-code-as-own-standard-library"><a class="header" href="#organise-utility-code-as-own-standard-library">Organise Utility Code as Own Standard Library</a></h4>
+<p>Organise, treat, and maintain all utility code as a small private extension to the standard library. If possible, consider releasing it open source.</p>
+<p>This recommendation sounds controversial, and needs further explanations. To understand it better, we first need to clarify what differentiates utility code from other, and then go deeper into how to apply it in real life.</p>
+<h5 id="utility-code"><a class="header" href="#utility-code">Utility Code</a></h5>
+<p>Utility code is code that implements technical details of a process, and is <strong>independent</strong> from the business logic of a project. The independence from the business logic is the crucial part that distinguishes utility code from any other.</p>
+<p>The following traits are common for utility code:</p>
+<ul>
+<li>it's independent from any other code besides the standard library and/or itself</li>
+<li>most of the methods operate on built-in types, or on the types from the standard library</li>
+<li>provides common and often used routines</li>
+<li>it can be extracted as a separate library</li>
+<li>it can be open sourced</li>
+<li>provides methods that do not exist in the standard library.</li>
+</ul>
+<p>Here are some examples of code that can be part of a private extension to the standard library:</p>
+<ul>
+<li>managing the lifecycle of a process, including proper signal handling, graceful and forced shutdown</li>
+<li>archiving/compressing directories</li>
+<li>extended configuration and methods for the <code>http.Client</code>, such as custom transports, file downloading, etc</li>
+<li>handling multipart uploads</li>
+<li>advanced strings manipulation</li>
+<li>some standard and generic data structures and algorithms, such as queues, graphs, lists, and so forth</li>
+<li>concurrency patterns</li>
+<li>file tree traversing utilities and so forth.</li>
+</ul>
+<p>Having clarified what utility code is and what is not, we can discuss what to do with it.</p>
+<h5 id="details-and-discussion"><a class="header" href="#details-and-discussion">Details and Discussion</a></h5>
+<p>To begin with, it's worth reminding one of the most often repeated mantras in the Go community:</p>
+<blockquote>
+<p>Prefer duplication over the wrong abstraction.</p>
+<p>– Sandi Metz, and many gophers.</p>
+</blockquote>
+<p>This is true, and this section should not be considered as something opposite. The author is one of those who respects and follows this advice.</p>
+<p>Nonetheless, many rules do have exceptions. It's more about finding what works. What is good for a small project/service, can be a poor choice when applied to multiple services. What's good at a small scale, can significantly complicate things at a larger, and vice-versa.</p>
+<p>The definition of utility code given above implicitly prohibits building additional abstractions on top of the standard library code. It can be only considered as an extension.</p>
+<p>Duplication works well for a small service, when a small team maintains a couple of medium-sized services. In other words, duplication suits well when it's used moderately and rarely, and in isolation.</p>
+<p>Things are different in a project that is supported by one large or several teams, when it's a monorepo, when the number of services grows. The duplication approach is not scalable. Employing it at a larger scale leads to <em>unnecessary</em> duplications, mess in codebase, lack of guarantees, and makes the project prone to errors. The quality of testing decreases.</p>
+<p>One of the biggest strengths of Go as a programming language, is that there is mostly one way for accomplishing a task. It becomes almost a requirement when working with many services. There should be <em>only</em> one way to download a file, zip or unzip a directory, parse an authentication header and so forth. Failing to acknowledge this can turn out to be a major source of obscure and nasty bugs at later stages of a project.</p>
+<p>So when a project is a monorepo, and has more than one service, the following is true about utility code:</p>
+<ul>
+<li>it will inevitably occur</li>
+<li>it should be reliable and trustworthy</li>
+<li>it should be tested</li>
+<li>it should be maintained</li>
+<li>it should be standardised.</li>
+</ul>
+<p>One of the ways to provide these guarantees is to have such code in one place, and being conscious about and responsible for it.</p>
+<h5 id="in-practice"><a class="header" href="#in-practice">In Practice</a></h5>
+<p>The guideline can be simply employed like this:</p>
+<ul>
+<li>at the root level, have the <code>lib</code> directory as home for utility code</li>
+<li>put packages inside <code>lib</code></li>
+<li>for packages those names clash with ones from the standard library, add a prefix, for example, <code>x</code>, <code>xstrings</code></li>
+<li>alternatively, keep names for packages as is, but have an agreement on how a custom package should be named when imported along with a package from the standard library with the same name. Do not use custom names for the standard packages, ever.</li>
+</ul>
+<p>This approach also works especially well when implementations of some routines are different between the platforms your project supports.</p>
+<p>As a result, the file tree may look like this:</p>
+<pre><code class="language-bash">├── bin
+├── cmd
+└── lib
+    ├── process
+    │   ├── process.go
+    │   ├── process_darwin.go
+    │   ├── process_linux.go
+    │   ├── process_posix_test.go
+    │   ├── process_windows.go
+    │   └── process_windows_test.go
+    ├── files
+    │   ├── files_posix.go
+    │   ├── files_test.go
+    │   └── files_windows.go
+    ├── http
+    │   ├── http.go
+    │   └── http_test.go
+    ├── os
+    │   ├── os.go
+    │   ├── os_posix_test.go
+    │   └── os_windows_test.go
+    └── strings
+        ├── strings.go
+        └── strings_test.go
+</code></pre>
+<p>When applied and followed carefully, this advice helps to consolidate and maintain low level code, providing one way for accomplishing a particular task, giving more guarantees about the quality and correctness of the implementation, and reducing the maintenance cost.</p>
+<h4 id="have-sandbox-for-breaking-changes"><a class="header" href="#have-sandbox-for-breaking-changes">Have Sandbox for Breaking Changes</a></h4>
+<p>Another important aspect that is different when working with a monolithic repository, is introduction of breaking changes, or entirely new code that is not proved to be stable. Within a monorepo, a piece of code is relied upon potentially in hundreds of places, so it's better to test a change in isolation, and only then use elsewhere. How do we do about it in a monorepo?</p>
+<p>In a monorepo, have a special place for adding potentially unstable code. An <code>experimental</code> or <code>unstable</code> directory at the root level would be a good choice. Then, inside that directory, follow similar structure as if it were the root level.</p>
+<h5 id="details-and-discussion-1"><a class="header" href="#details-and-discussion-1">Details and Discussion</a></h5>
+<p>In a classic scenario, dependency management tools usually solve this problem. A dependency that is used in many places, is updated, and the change is then gradually introduced. Go modules and/or vendoring are handy tools here, and this is one of the main reasons for their existence.</p>
+<p>However, these tools are not available anymore for addressing this problem as all code is in a single repository. At least, not directly. It's impossible to vendor a part of a repository, or use a separate import path for a package that is part of a large module.</p>
+<p>A solution to this problem has existed for many years, and is in use by various kinds of software, from private projects to the Linux kernel, and many established Linux distributions and software. A common name for the solution is &quot;experimental&quot;.</p>
+<p>What do we mean by &quot;experimental&quot;?</p>
+<p>Of course, there are different stages in release processes, such as development, alpha and beta versions, release candidates and so on. Somewhere between development and beta there is usually an experimental branch, or a stage. After reaching some level of stability, the project transitions to next stage, usually testing, or beta. This is followed by many projects, yet it's not exactly what current advice is about.</p>
+<p>This guideline is about having experimental code included in the stable version, and made available for conscious use. If the reader have ever configured and compiled a Linux kernel, they would recall the <code>EXPERIMENTAL</code> label for drivers that are included in a stable release, but are still in active development, and included for use as is, without any guarantees.</p>
+<p>Similarly, even the most stable version of Debian and many other Linux distributions have an <code>experimental</code> section in their repositories, which contain early releases of software. Such sources are turned off by default, but the user is free to use it.</p>
+<p>So here's what to do in a monorepo. When introducing a breaking change or something entirely new, and such code is not guaranteed to work or work correctly (hence it's not for general use), consider this:</p>
+<ul>
+<li>add a package for new code, if it doesn't exist yet, to the <code>experimental</code> or <code>unstable</code> directory</li>
+<li>add new code to the package</li>
+<li>use it, test it, change it, prove it works</li>
+<li>once confirmed working:
+<ul>
+<li>for new code, move it to the stable tree</li>
+<li>for changes to existing code, depending on the situation
+<ul>
+<li>move changes to the stable tree and make necessary adjustments</li>
+<li>alternatively, use type aliases to redirect uses from old code to new
+<ul>
+<li>test and prove it works</li>
+<li>move changes to the stable tree.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>An important note about the process is that the <code>experimental</code>/<code>unstable</code> tree must be kept in a good order at all times. As with utility code, without discipline, it's too easy to let these places become junk yards. Keep them clear from clutter by making sure everyone on the team is following conventions and the boy scout rule, move working code to the stable tree, eliminate unused and incorrect code.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="u01-05-single-application.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="u01-07-monorepo-extra.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="u01-05-single-application.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="u01-07-monorepo-extra.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

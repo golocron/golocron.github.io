@@ -1,0 +1,291 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js rust">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Single Application - Golocron – Software Development With Go</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Design software for change">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "coal" : "rust";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="00-intro.html">Golocron</a></li><li class="chapter-item expanded affix "><li class="part-title">The Style Guide</li><li class="chapter-item expanded "><a href="u01-00-introduction.html"><strong aria-hidden="true">1.</strong> Project Layout</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="u01-01-good-and-bad-layout.html"><strong aria-hidden="true">1.1.</strong> Good and Bad Layout</a></li><li class="chapter-item expanded "><a href="u01-02-types-of-layouts.html"><strong aria-hidden="true">1.2.</strong> Types of Layouts</a></li><li class="chapter-item expanded "><a href="u01-03-common.html"><strong aria-hidden="true">1.3.</strong> Common</a></li><li class="chapter-item expanded "><a href="u01-04-library.html"><strong aria-hidden="true">1.4.</strong> Library</a></li><li class="chapter-item expanded "><a href="u01-05-single-application.html" class="active"><strong aria-hidden="true">1.5.</strong> Single Application</a></li><li class="chapter-item expanded "><a href="u01-06-monorepo.html"><strong aria-hidden="true">1.6.</strong> Monolithic Repository</a></li><li class="chapter-item expanded "><a href="u01-07-monorepo-extra.html"><strong aria-hidden="true">1.7.</strong> Monorepo: Additional Chapters</a></li><li class="chapter-item expanded "><a href="u01-08-versioning-and-go.html"><strong aria-hidden="true">1.8.</strong> Versioning and Go</a></li><li class="chapter-item expanded "><a href="u01-09-notes-on-release-notes.html"><strong aria-hidden="true">1.9.</strong> Notes on Release Notes</a></li><li class="chapter-item expanded "><a href="u01-10-summary.html"><strong aria-hidden="true">1.10.</strong> Summary</a></li></ol></li><li class="chapter-item expanded "><a href="u02-00-introduction.html"><strong aria-hidden="true">2.</strong> Package Layout</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="u02-01-what-is-a-package.html"><strong aria-hidden="true">2.1.</strong> What is a Package</a></li><li class="chapter-item expanded "><a href="u02-02-when-to-create-a-package.html"><strong aria-hidden="true">2.2.</strong> When to Create a Package</a></li><li class="chapter-item expanded "><a href="u02-03-keep-public-api-narrow.html"><strong aria-hidden="true">2.3.</strong> Keep Public API as Narrow as Possible</a></li><li class="chapter-item expanded "><a href="u02-04-the-main-package.html"><strong aria-hidden="true">2.4.</strong> The Main Package</a></li><li class="chapter-item expanded "><a href="u02-05-package-provides-something.html"><strong aria-hidden="true">2.5.</strong> Package Provides Something</a></li><li class="chapter-item expanded "><a href="u02-06-naming-a-package.html"><strong aria-hidden="true">2.6.</strong> Naming a Package</a></li><li class="chapter-item expanded "><a href="u02-07-structure.html"><strong aria-hidden="true">2.7.</strong> Structure</a></li><li class="chapter-item expanded "><a href="u02-08-files-in-a-package.html"><strong aria-hidden="true">2.8.</strong> Files in a Package</a></li><li class="chapter-item expanded "><a href="u02-09-cross-platform-code.html"><strong aria-hidden="true">2.9.</strong> Cross-Platform Code</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="u02-10-basic-principles-cp.html"><strong aria-hidden="true">2.9.1.</strong> Basic Principles of Writing Cross-Platform Code</a></li><li class="chapter-item expanded "><a href="u02-11-cp-options-in-go.html"><strong aria-hidden="true">2.9.2.</strong> Cross-Platform Options in Go</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.10.</strong> Package and File Organisation</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.11.</strong> Summary</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> File Layout</div></li><li class="chapter-item expanded affix "><li class="part-title">Foundation</li><li class="chapter-item expanded affix "><li class="part-title">Application Design</li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Golocron – Software Development With Go</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="single-application"><a class="header" href="#single-application">Single Application</a></h2>
+<p>A project (and its repository) for a single application is a further development of the guidelines given so far. Almost, if not everything, from the <a href="u01-03-common.html#common">Common</a> and <a href="u01-04-library.html#library">Library</a> sections can, and most likely, should be applied when working on a single service from the layout perspective. There are a couple of recommendations that make the experience better.</p>
+<p>One distinction between a service and a library is that there is always at least one artefact, a binary. It also means that a project has at least one <code>main.go</code> file, which is not needed for a library. The experience of working on a project depends, to some extent, on where those files go.</p>
+<p>The following will make interaction with a single-application project more convenient and easier:</p>
+<ul>
+<li>use a separate directory for entry points to the service and satellite tools/applications</li>
+<li>use a special, excluded from Git, directory for outputting build artefacts.</li>
+</ul>
+<p>Next couple of sections go in expand the suggestions.</p>
+<h3 id="use-cmd-directory-for-entry-points"><a class="header" href="#use-cmd-directory-for-entry-points">Use <code>cmd</code> Directory for Entry Points</a></h3>
+<p>Use <code>cmd</code> directory for entry points to your service. Inside the directory, create a directory per each entry point, named after the application. The inner directories should mainly contain only one file, <code>main.go</code>.</p>
+<p>Even when a project is a single application, oftentimes it has a number of satellite CLI and development tools, or different modes. Instead of a long list of <code>if</code> statements, this approach allows for small and focused, yet different entry points.</p>
+<p>Create a directory named <code>cmd</code> at the top level of the file tree, and move any entry points, i.e. <code>main.go</code> files in to appropriate directories inside <code>cmd</code>. These second-level directories should be named as you want the binaries to be. Each of those directories is an isolated <code>main</code> package, hence a separate entry point to the app, defined in it.</p>
+<h3 id="use-bin-directory-for-binaries"><a class="header" href="#use-bin-directory-for-binaries">Use <code>bin</code> Directory for Binaries</a></h3>
+<p>Use <code>bin</code> directory for build artefacts. The directory must be excluded from the source control system. The directory is used in both development and CI processes.</p>
+<p>As you remember, there should be no garbage in a repository. A binary that is built during development process should not appear among committed content.</p>
+<p>Usually, a binary is excluded by listing its name in the <code>.gitignore</code> file. While this gives an immediate result and may work, it doesn't mean there is no a better option. This approach is not scalable. If someone builds the service with a custom name for the binary, the output can be accidentally committed. The same with CI, the process will just put files right at the root level.</p>
+<p>A way to improve the situation is to have a separate directory in the project which is:</p>
+<ul>
+<li>excluded from Git</li>
+<li>managed (created and cleaned) automatically</li>
+<li>and used by both developers and build tools.</li>
+</ul>
+<p>The special directory is named <code>bin</code>, and its place is at the root level. The entire directory is excluded from Git.</p>
+<p>Then, since the <a href="u01-03-common.html#common">Common</a> recommendations are in effect, you've got the Makefile. Given the previous tip, the targets work like this:</p>
+<ul>
+<li>inputs are taken from the <code>cmd</code> directory, e.g. <code>cmd/my-app</code></li>
+<li>binaries are put to the <code>bin</code> directory, e.g. <code>bin/my-app</code></li>
+</ul>
+<p>Combined together, we get:</p>
+<pre><code class="language-bash">go build -ldflags &quot;-X main.revision=`git rev-parse --short HEAD`&quot; -o bin/my-app ./cmd/my-app
+</code></pre>
+<p>If the directory doest not exist, make sure it's created as needed. When you do <code>make clean</code>, the target should remove everything from that directory.</p>
+<p>All targets in the build or testing pipelines also use this path for outputting and accessing binaries. When running the service locally, you run it from the directory. Nice and tidy: <code>bin/my-app</code>. If typing in extra characters is a concern, define a target the Makefile, and use <code>make run-my-app</code>. Having this as a target is a scalable way since everyone in the team can use it. If need, you can also create a shell alias as <code>alias run-my-app='make run-my-app</code>.</p>
+<p>The targets used in CI process also use the <code>bin</code> directory for artefacts, and then packaging and deploy steps seek for the artefacts in there. The process is structured and organised.</p>
+<p>Having a separate directory for binaries is important because chances of multiple binaries are very high. One popular scenario is when a developer works under macOS, and uses Docker. While local version is going to be built for the Mac, the Docker version is built for Linux, hence there are two different binaries already.</p>
+<p>It's likely that sometimes there will be a need to build binaries for many systems locally. Thus, two entries should be present in the <code>.gitignore</code> file. Then, if a new binary is introduced later, it will be another two entries. That's already a lot to keep track of, and too many files are at the root level.</p>
+<p>Instead, define the <code>bin</code>  directory once, add it to the <code>.gitignore</code> file, set up all appropriate targets in the Makefile to use the directory, and don't worry about it for the rest of the project's life.</p>
+<hr />
+<p>Here is how a single-application repository may look like with the two recent suggestions applied:</p>
+<pre><code class="language-bash">├── bin
+│   ├── example-agent
+│   ├── example-cli
+│   ├── example-devsrv
+│   └── example-plugins
+└── cmd
+    ├── example-agent
+    │   └── main.go
+    ├── example-cli
+    │   └── main.go
+    ├── example-devsrv
+    │   └── main.go
+    └── example-plugins
+        └── main.go
+</code></pre>
+<p>As you see, the structure is organised in a good order, and easy to work with.</p>
+<p>Even more important the <code>bin</code> and <code>cmd</code> directories are when a project contains code for multiple <em>different</em> services. In this case, it's a monolithic repository, and many people, potentially several teams, are working on it. All previously given recommendations work especially well with a monorepo. That's what we will talk about in the next section.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="u01-04-library.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="u01-06-monorepo.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="u01-04-library.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="u01-06-monorepo.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

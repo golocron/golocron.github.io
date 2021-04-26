@@ -1,0 +1,419 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js rust">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Notes on Release Notes - Golocron – Software Development With Go</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Design software for change">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "coal" : "rust";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="00-intro.html">Golocron</a></li><li class="chapter-item expanded affix "><li class="part-title">The Style Guide</li><li class="chapter-item expanded "><a href="u01-00-introduction.html"><strong aria-hidden="true">1.</strong> Project Layout</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="u01-01-good-and-bad-layout.html"><strong aria-hidden="true">1.1.</strong> Good and Bad Layout</a></li><li class="chapter-item expanded "><a href="u01-02-types-of-layouts.html"><strong aria-hidden="true">1.2.</strong> Types of Layouts</a></li><li class="chapter-item expanded "><a href="u01-03-common.html"><strong aria-hidden="true">1.3.</strong> Common</a></li><li class="chapter-item expanded "><a href="u01-04-library.html"><strong aria-hidden="true">1.4.</strong> Library</a></li><li class="chapter-item expanded "><a href="u01-05-single-application.html"><strong aria-hidden="true">1.5.</strong> Single Application</a></li><li class="chapter-item expanded "><a href="u01-06-monorepo.html"><strong aria-hidden="true">1.6.</strong> Monolithic Repository</a></li><li class="chapter-item expanded "><a href="u01-07-monorepo-extra.html"><strong aria-hidden="true">1.7.</strong> Monorepo: Additional Chapters</a></li><li class="chapter-item expanded "><a href="u01-08-versioning-and-go.html"><strong aria-hidden="true">1.8.</strong> Versioning and Go</a></li><li class="chapter-item expanded "><a href="u01-09-notes-on-release-notes.html" class="active"><strong aria-hidden="true">1.9.</strong> Notes on Release Notes</a></li><li class="chapter-item expanded "><a href="u01-10-summary.html"><strong aria-hidden="true">1.10.</strong> Summary</a></li></ol></li><li class="chapter-item expanded "><a href="u02-00-introduction.html"><strong aria-hidden="true">2.</strong> Package Layout</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="u02-01-what-is-a-package.html"><strong aria-hidden="true">2.1.</strong> What is a Package</a></li><li class="chapter-item expanded "><a href="u02-02-when-to-create-a-package.html"><strong aria-hidden="true">2.2.</strong> When to Create a Package</a></li><li class="chapter-item expanded "><a href="u02-03-keep-public-api-narrow.html"><strong aria-hidden="true">2.3.</strong> Keep Public API as Narrow as Possible</a></li><li class="chapter-item expanded "><a href="u02-04-the-main-package.html"><strong aria-hidden="true">2.4.</strong> The Main Package</a></li><li class="chapter-item expanded "><a href="u02-05-package-provides-something.html"><strong aria-hidden="true">2.5.</strong> Package Provides Something</a></li><li class="chapter-item expanded "><a href="u02-06-naming-a-package.html"><strong aria-hidden="true">2.6.</strong> Naming a Package</a></li><li class="chapter-item expanded "><a href="u02-07-structure.html"><strong aria-hidden="true">2.7.</strong> Structure</a></li><li class="chapter-item expanded "><a href="u02-08-files-in-a-package.html"><strong aria-hidden="true">2.8.</strong> Files in a Package</a></li><li class="chapter-item expanded "><a href="u02-09-cross-platform-code.html"><strong aria-hidden="true">2.9.</strong> Cross-Platform Code</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="u02-10-basic-principles-cp.html"><strong aria-hidden="true">2.9.1.</strong> Basic Principles of Writing Cross-Platform Code</a></li><li class="chapter-item expanded "><a href="u02-11-cp-options-in-go.html"><strong aria-hidden="true">2.9.2.</strong> Cross-Platform Options in Go</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.10.</strong> Package and File Organisation</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.11.</strong> Summary</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> File Layout</div></li><li class="chapter-item expanded affix "><li class="part-title">Foundation</li><li class="chapter-item expanded affix "><li class="part-title">Application Design</li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Golocron – Software Development With Go</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="notes-on-release-notes"><a class="header" href="#notes-on-release-notes">Notes on Release Notes</a></h2>
+<p>One more thing to talk about before wrapping up the project layout guidelines, and a follow up for the previous topic, is release notes. We will briefly discuss some ideas for better communicating what's changed in a project.</p>
+<p>This is important for both, internal and external audiences. For a private project in an organisation, the internal audience is developers who use the software; the external audience is management and other potentially interested parties. When done well, and everyone knows where to look at, release notes that are published regularly and reflect the work that has been done, serve as a summary and description of the outcomes.</p>
+<p>In an open-source project, the internal audience is committers and maintainers; the external audience is users of the project. For the internal audience, often working from all over the world, this helps with keeping everyone in sync with what is going on in the project. For the users, it's the only convenient way for knowing about changes, and it provides information required for planning and deciding on when, and often - how, to perform an update. Of course, in both cases, private and public projects, audiences may, and often do, overlap.</p>
+<p>Although the reasoning above just touches on the topic, this is already sufficient to understand the importance of preparing and publishing some form of release notes. This should be done for each and every release. Needless to say that a <code>MAJOR</code> version <em>must</em> come with a comprehensive description of the changes it contains.</p>
+<p>The main guideline of this section is summarised as <strong>provide your project with a changelog</strong>, informing the users of the software about the changes you've made. A few practices help in achieving this:</p>
+<ul>
+<li>being generally disciplined, in the process, keeping things in a good order</li>
+<li>writing good commit messages</li>
+<li>using annotated tags</li>
+<li>and sticking to good practices of maintaining a changelog.</li>
+</ul>
+<p>A changelog is not release notes though. A changelog is more on the technical side of a project, while release notes are more on the product, or even marketing side. For software projects whose target audience is developers, the terms may be interchangeable, but not necessarily are.</p>
+<p>As this book is more about the technical side of things, we're focusing on maintaining a good changelog, and related activities. Let's look at these a bit closer.</p>
+<h3 id="write-good-commit-messages"><a class="header" href="#write-good-commit-messages">Write Good Commit Messages</a></h3>
+<p>Perhaps there are not so many topics in software development with such a long history of attempts to establish good practices, and make everyone in a team to follow them, as writing good commit messages.</p>
+<p>One of the famous and best resources that summarises what needs to be said about writing commit messages, is <a href="https://chris.beams.io/posts/git-commit/">this article</a>. If you haven't seen and read it yet, stop reading this, and don't get back until that article is fully read.</p>
+<p>A quick summary on how to do better with commit messages:</p>
+<ol>
+<li><a href="https://chris.beams.io/posts/git-commit/#separate">Separate subject from the body with a blank line</a></li>
+<li><a href="https://chris.beams.io/posts/git-commit/#limit-50">Limit the subject line to 50 characters</a></li>
+<li><a href="https://chris.beams.io/posts/git-commit/#capitalize">Capitalise the subject line</a></li>
+<li><a href="https://chris.beams.io/posts/git-commit/#end">Do not end the subject line with a period</a></li>
+<li><a href="https://chris.beams.io/posts/git-commit/#imperative">Use the imperative mood in the subject line</a></li>
+<li><a href="https://chris.beams.io/posts/git-commit/#wrap-72">Wrap the body at 72 characters</a></li>
+<li><a href="https://chris.beams.io/posts/git-commit/#why-not-how">Use the body to explain what and why vs. how</a>.</li>
+</ol>
+<p>This is important for many reasons, such as overall order, clean history, transparency and the ease of working with the commit tree. Good commit messages become even more important as it reduces the effort required to gather the list of changes for the changelog.</p>
+<h3 id="use-annotated-tags"><a class="header" href="#use-annotated-tags">Use Annotated Tags</a></h3>
+<p>By default, create annotated Git tags.</p>
+<p>As you know, Git offers two flavours of tags - lightweight and annotated. A lightweight tag is a pointer to a specific commit. An annotated tag, on the other hand, is a full Git object, which means it contains the following information:</p>
+<ul>
+<li>the checksum</li>
+<li>who has made the tag, when, and their email</li>
+<li>a tagging message (pretty much a commit message, hence same rules apply)</li>
+<li>can be signed with GPG (therefore, verified).</li>
+</ul>
+<p>The official <a href="https://git-scm.com/book/en/v2/Git-Basics-Tagging">Git documentation recommends</a> using annotated tags.</p>
+<p>Since each tag carries all identity information with it, this helps in figuring out what was changed, when, where and by whom. Combined with good commit messages, annotated tags provide enough information for preparing the list of changes for the changelog. The worst case scenario would be when in order to create a changelog, the information contained in the repository was not enough, and you had to use multiple sources, including the task tracker.</p>
+<p>By writing good commit messages and using annotated tags, you have helped your future self with preparing for writing a good changelog.</p>
+<h3 id="maintain-the-changelog"><a class="header" href="#maintain-the-changelog">Maintain the Changelog</a></h3>
+<p>To keep the audience of a project informed about changes, <strong>maintain the changelog</strong>.</p>
+<p>What makes a good changelog? What is important, and requires a special attention? Consider the following suggestions:</p>
+<ul>
+<li>remember that the changelog is for people</li>
+<li>add an entry for each version</li>
+<li>keep records in the descending order, i.e. the latest version comes first</li>
+<li>always include the date of a release</li>
+<li>group changes by their type</li>
+<li>be consistent with the style and wording</li>
+<li>provide only relevant information.</li>
+</ul>
+<p>The sub-sections below go into more detail on these suggestions.</p>
+<h4 id="changelog-is-for-people"><a class="header" href="#changelog-is-for-people">Changelog is for People</a></h4>
+<p>First and foremost, <strong>changelogs are</strong> written to be <strong>read by humans</strong>, not machines. Ultimately, the changelog should answer the question: <strong>will my software work if I update this dependency</strong>, or <strong>does the update break anything</strong>?</p>
+<p>Having developed and maintained software that was relied upon in everyday work by developers, both internal and external, it’s safe to say that you either only provide good and valuable changelog and/or release notes, or nothing at all. Something in the middle, an automated non-sense or irrelevant information are just noise that no one is interested in.</p>
+<p>The changelog is where engineers look at while making decisions about using a library or updating it. Keep in mind that &quot;engineers&quot; means not only software developers that use the project in their environments; the target audience, depending on the popularity and how widespread the project is, also includes:</p>
+<ul>
+<li>system administrators and operations engineers</li>
+<li>SRE and Devops people</li>
+<li>application security analytics and engineers</li>
+<li>and whoever is working with them, such as support and sale teams, lead engineers, product managers, designers, etc.</li>
+</ul>
+<p>Given this, make sure that the changelog provides what it is expected to provide  - the information about what's changed, when, how it affects the user, and what to pay a special attention to.</p>
+<h4 id="log-each-version"><a class="header" href="#log-each-version">Log Each Version</a></h4>
+<p>Add each version to the changelog.</p>
+<p>Although this is self-evident, and does not require further explanation, it's worth reminding that the user should be able to see what has been changed in each particular version of the software. If the software is a library, especially a public one, and is used by other developers in their products, this is a must.</p>
+<h4 id="last-version-comes-first"><a class="header" href="#last-version-comes-first">Last Version Comes First</a></h4>
+<p>Always add the latest version at the top of the changelog. In other words, it's similar to a stack data structure, versions in the changelog are listed in a reverse order.</p>
+<p>This is important for a few reasons:</p>
+<ul>
+<li>For the first, the information of interest should be accessible as quickly and easily as possible.</li>
+<li>Secondly, in most cases, the user is interested in recent changes rather than in earlier versions of the software.</li>
+<li>And finally, this helps in saving a tiny but important bit of mental energy, as neither the user, nor a maintainer, has to scroll the entire list to get to the point when reading or updating the changelog.</li>
+</ul>
+<h4 id="show-the-date-of-release"><a class="header" href="#show-the-date-of-release">Show The Date of Release</a></h4>
+<p>Provide each version with the date of release. Use the ISO-8601 format, aka <code>YYYY-MM-DD</code>.</p>
+<p>This is essential for keeping track of changes, and it's hard to tell what's more important - the version number, or the date when it was released. Without either, the information is not complete. The date of release establishes a concrete point in the timeline, and allows for relating to a particular version, and correlating between the date and various events.</p>
+<p>The format requirement helps to avoid confusions caused by the variety of regional formats. The ISO-8601 format is well-known, simple and easy to understand. Just stick to it.</p>
+<h4 id="group-changes-by-type"><a class="header" href="#group-changes-by-type">Group Changes by Type</a></h4>
+<p>To simplify reading of a changelog, group changes by the type of a change. This is helpful because structured and organised information is easier to understand, as well as to notice something important.</p>
+<p>Some of the most common groups, along with the corresponding types of changes, and the relation to Semantic Versioning, are shown in the table below. For Semver, where multiple options are available, they are given in the order of preference. The table shows an approximate relation, just to visualise how types of changes and version numbers correspond.</p>
+<table><thead><tr><th>Group</th><th>Type of a Change</th><th>Semver</th></tr></thead><tbody>
+<tr><td>Added</td><td>New Features</td><td><code>MAJOR</code>, or <code>MINOR</code></td></tr>
+<tr><td>Changed</td><td>Improvements</td><td><code>MINOR</code>, or <code>MAJOR</code></td></tr>
+<tr><td>Fixed</td><td>Bug Fixes</td><td><code>PATCH</code>, or <code>MINOR</code></td></tr>
+<tr><td>Security</td><td>Vulnerability Fixes</td><td><code>MINOR</code></td></tr>
+<tr><td>Deprecated</td><td>Deprecations</td><td><code>MINOR</code></td></tr>
+<tr><td>Removed</td><td>Removed Features/APIs</td><td><code>MINOR</code>, or <code>MAJOR</code></td></tr>
+</tbody></table>
+<p>For most use cases, these groups should be enough.</p>
+<p>However, a project may support multiple platforms (i.e. operating systems and processor architectures, more on this in Unit 2). In addition to changes common across all supported platforms, something different can be added/updated/fixed for a particular architecture. In such case, two options are available:</p>
+<ul>
+<li>prefix a change that is specific to a particular platform with its name
+<ul>
+<li>e.g. for an <code>Added</code> change for the Mac</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-text">Added:
+    ...
+    Mac: Notarisation
+    ...
+Fixed:
+    ...
+    Linux: High memory usage when working with large files
+    ...
+</code></pre>
+<ul>
+<li>alternatively, group platform-specific changes together, after the list of common changes
+<ul>
+<li>e.g. for a <code>Fixed</code> change for Linux, a change should be listed in the <code>Fixed</code> sub-list for the <code>Linux</code> list, like</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-text">Common:
+- Added
+    ...
+- Updated
+    ...
+- Fixed
+    ...
+
+Mac:
+- Added
+    - Notarisation
+    ...
+
+Linux:
+- Fixed
+    - High memory usage when working with large files
+    ...
+</code></pre>
+<p>There are many different ways of grouping, and at some point it might be tempting to add one more category, or a grouping criterion. Resist the temptation, and ask a question &quot;Is this group essential?&quot;. Highly likely it's not, and such a change should belong in one of the existing groups. The importance of this is the subject of the <a href="#be-consistent">Be Consistent</a> guideline.</p>
+<p>A special group of changes, however, makes an exception. A natural part of the project and product development process is upcoming changes that are not going to be included in the next one or a couple of releases. These are usually new features, available for canary testing, and while being developed, they aren't included in a release. If this approach is used in your project, keep these changes at the very top of the changelog, before the latest version. Users and developers would benefit from knowing what's coming, and they would be able to plan accordingly, or become early adopters of new features. As a positive side effect, you can receive feedback sooner.</p>
+<h4 id="be-consistent"><a class="header" href="#be-consistent">Be Consistent</a></h4>
+<p>Use consistent wording, formatting, and grouping. This is especially important when working in a team of developers. Make sure everyone follows the same visual and writing styles, and the changelog looks nice, and is coherent and consistent. For the reader, it should appear as if it was written by one person.</p>
+<p>Specifically, ensure the following:</p>
+<ul>
+<li>all dates are always in the ISO-8601 format, i.e. <code>YYYY-MM-DD</code></li>
+<li>all versions are always in the Semver format, i.e. <code>vX.Y.Z</code></li>
+<li>groups are either all Simple Past verbs, or plural nouns from the table <a href="#group-changes-by-type">given here</a></li>
+<li>the list of groups is relatively persistent</li>
+<li>changes are articulated and communicated clearly</li>
+<li>sections with versions are clickable, for ease of navigation</li>
+<li>strive for short and concise descriptions, using, whenever possible, <a href="https://en.wikipedia.org/wiki/Plain_English">Plain English</a>, or the plain version of the language of your choice.</li>
+</ul>
+<h4 id="provide-relevant-information"><a class="header" href="#provide-relevant-information">Provide Relevant Information</a></h4>
+<p>Provide only relevant information that is important for the user or the developer. In other words, keep the signal vs. noise ratio high.</p>
+<p>For example, here is what should be included in a changelog, in addition the main contents:</p>
+<ul>
+<li>changes in the public API</li>
+<li>increase/decrease in performance</li>
+<li>any implementation-specific changes that may affect the user, especially, in a negative way</li>
+<li>updates to dependencies if they contain any of the following:
+<ul>
+<li>any negative impact on performance</li>
+<li>significant increase in the size of the software, aka bloated libraries</li>
+<li>significant changes in licensing, including dependencies (yes, you're responsible for this too).</li>
+</ul>
+</li>
+</ul>
+<p>Things that are better be left outside of a changelog:</p>
+<ul>
+<li>internal implementation details that don't affect the user/developer in any way</li>
+<li>regular dependency updates</li>
+<li>refactoring without a noticeable change in functionality/performance.</li>
+</ul>
+<p>It's worth noting that sometimes changes are so important that it makes sense to provide a description of the actions required from the user. For non-technical users this is normally communicated through release notes and documentation. For developers, the changelog might be a good place to look at first. However, the home for detailed descriptions, explanations, instruction, migration steps, etc is still documentation. A quick summary and a link to the place in the docs is a good way to start.</p>
+<h3 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h3>
+<p>What is the most important ingredient in a relationship? Trust. A significant contributor to trust is communication, clear, transparent and honest. As long as involved parties trust each other, the relationships continues to last.</p>
+<p>There is a relationship when someone uses software; it's between the user and the developer. The user might be a single person, or a larger group; similarly, there might be a single developer, or an organisation. The important thing is whether there is trust in the relationship.</p>
+<p>It is the features and quality of the software what forms the foundation for the trust. If it works, and works well, then users remain loyal. The documentation plays an important role, and is a big part of communication between the developer and user. So far so good.</p>
+<p>When is trust lost, assuming there is no betrayal or lie involved? One possible reason is when expectations are not met. The other is, however, when something unexpected happens, regularly, without a notice. When something changes, but neither the changes, nor the reasons for them have been communicated, or communicated poorly.</p>
+<p>A changelog is the way for addressing the issue. A well-written changelog communicates what's changed clearly, transparently and honestly. This is why, if you want to build lasting relationships with your users, you need to maintain a changelog.</p>
+<p>The ideas and suggestions in this section are based on learnings and experiences gained over many years, and from various sources. A great resource for reference, and where some of the ideas were looked at for inspirations, is <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>. Another good place to learn from is real-life examples. The list below includes some that are worth looking at:</p>
+<ul>
+<li><a href="https://github.com/hecrj/iced/blob/master/CHANGELOG.md">iced</a></li>
+<li><a href="https://github.com/tikv/tikv/blob/master/CHANGELOG.md">tikv</a></li>
+<li><a href="https://github.com/linebender/druid/blob/master/CHANGELOG.md">druid</a></li>
+<li><a href="https://github.com/meilisearch/MeiliSearch/blob/master/CHANGELOG.md">MeiliSearch</a></li>
+<li><a href="https://github.com/docker/docker-ce/blob/master/CHANGELOG.md">docker-ce</a></li>
+<li><a href="https://github.com/olivierlacan/keep-a-changelog/blob/master/CHANGELOG.md">keep-a-changelog</a>.</li>
+</ul>
+<p>The ultimate goal is to let users of your software know about the changes you make. If the suggestions given here don't suit, or too resource demanding, focus on communicating changes to the user in a simplest possible form. While the way it's done is important, it's secondary to the fact that it's done at all. Trust is hard to gain, but easy to loose. Make sure that, while making changes to increase trust, the way the changes are communicated support that increase.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="u01-08-versioning-and-go.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="u01-10-summary.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="u01-08-versioning-and-go.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="u01-10-summary.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

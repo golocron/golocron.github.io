@@ -1,0 +1,382 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js rust">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Cross-Platform Options in Go - Golocron – Software Development With Go</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Design software for change">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "coal" : "rust";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="00-intro.html">Golocron</a></li><li class="chapter-item expanded affix "><li class="part-title">The Style Guide</li><li class="chapter-item expanded "><a href="u01-00-introduction.html"><strong aria-hidden="true">1.</strong> Project Layout</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="u01-01-good-and-bad-layout.html"><strong aria-hidden="true">1.1.</strong> Good and Bad Layout</a></li><li class="chapter-item expanded "><a href="u01-02-types-of-layouts.html"><strong aria-hidden="true">1.2.</strong> Types of Layouts</a></li><li class="chapter-item expanded "><a href="u01-03-common.html"><strong aria-hidden="true">1.3.</strong> Common</a></li><li class="chapter-item expanded "><a href="u01-04-library.html"><strong aria-hidden="true">1.4.</strong> Library</a></li><li class="chapter-item expanded "><a href="u01-05-single-application.html"><strong aria-hidden="true">1.5.</strong> Single Application</a></li><li class="chapter-item expanded "><a href="u01-06-monorepo.html"><strong aria-hidden="true">1.6.</strong> Monolithic Repository</a></li><li class="chapter-item expanded "><a href="u01-07-monorepo-extra.html"><strong aria-hidden="true">1.7.</strong> Monorepo: Additional Chapters</a></li><li class="chapter-item expanded "><a href="u01-08-versioning-and-go.html"><strong aria-hidden="true">1.8.</strong> Versioning and Go</a></li><li class="chapter-item expanded "><a href="u01-09-notes-on-release-notes.html"><strong aria-hidden="true">1.9.</strong> Notes on Release Notes</a></li><li class="chapter-item expanded "><a href="u01-10-summary.html"><strong aria-hidden="true">1.10.</strong> Summary</a></li></ol></li><li class="chapter-item expanded "><a href="u02-00-introduction.html"><strong aria-hidden="true">2.</strong> Package Layout</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="u02-01-what-is-a-package.html"><strong aria-hidden="true">2.1.</strong> What is a Package</a></li><li class="chapter-item expanded "><a href="u02-02-when-to-create-a-package.html"><strong aria-hidden="true">2.2.</strong> When to Create a Package</a></li><li class="chapter-item expanded "><a href="u02-03-keep-public-api-narrow.html"><strong aria-hidden="true">2.3.</strong> Keep Public API as Narrow as Possible</a></li><li class="chapter-item expanded "><a href="u02-04-the-main-package.html"><strong aria-hidden="true">2.4.</strong> The Main Package</a></li><li class="chapter-item expanded "><a href="u02-05-package-provides-something.html"><strong aria-hidden="true">2.5.</strong> Package Provides Something</a></li><li class="chapter-item expanded "><a href="u02-06-naming-a-package.html"><strong aria-hidden="true">2.6.</strong> Naming a Package</a></li><li class="chapter-item expanded "><a href="u02-07-structure.html"><strong aria-hidden="true">2.7.</strong> Structure</a></li><li class="chapter-item expanded "><a href="u02-08-files-in-a-package.html"><strong aria-hidden="true">2.8.</strong> Files in a Package</a></li><li class="chapter-item expanded "><a href="u02-09-cross-platform-code.html"><strong aria-hidden="true">2.9.</strong> Cross-Platform Code</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="u02-10-basic-principles-cp.html"><strong aria-hidden="true">2.9.1.</strong> Basic Principles of Writing Cross-Platform Code</a></li><li class="chapter-item expanded "><a href="u02-11-cp-options-in-go.html" class="active"><strong aria-hidden="true">2.9.2.</strong> Cross-Platform Options in Go</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.10.</strong> Package and File Organisation</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.11.</strong> Summary</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> File Layout</div></li><li class="chapter-item expanded affix "><li class="part-title">Foundation</li><li class="chapter-item expanded affix "><li class="part-title">Application Design</li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Golocron – Software Development With Go</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="cross-platform-options-in-go"><a class="header" href="#cross-platform-options-in-go">Cross-Platform Options in Go</a></h2>
+<p>One of the key strengths of the Go programming language is its powerful tooling focused on developer's productivity. Fast compilation and ease of dependency management are vital for the ecosystem. But tools for writing and building multi-platform code are what make Go truly special.</p>
+<p>Writing and maintaining cross-platform software (without distribution) is a two-stage process:</p>
+<ul>
+<li>the code needs to be written in a way that allows changing its behaviour based on the platform it's running on</li>
+<li>the code then needs to be compiled for each supported platform.</li>
+</ul>
+<p>We talk about the second stage first, and then dig deeper into the first.</p>
+<h3 id="terminology"><a class="header" href="#terminology">Terminology</a></h3>
+<p>Before we get too far in the discussion, it's good to agree on the terminology used in next sections.</p>
+<p>In this work, as well as in the community, we use the following terms with the corresponding meanings:</p>
+<ul>
+<li>Go operating system, or simply operating system, as per the environment variable <code>GOOS</code> – one of the target operating systems Go supports. Expressed as one of the predefined values.</li>
+<li>Go architecture, or simply architecture, as per the environment variable <code>GOARCH</code> – one of the the target system architectures Go supports. Similarly to the operating system, it's one of the predefined values.</li>
+<li>Go platform, or just platform, a combination of the two, an operating system and architecture, in this order. This term is not used in code or as a setting, but is used in discussions and documentation. When you see a use of the term &quot;platform&quot; in a conversation that is related to cross-platform software in Go, it means a combination of an operating system and architecture. For instance, these sentences are written on the <code>darwin/amd64</code> platform.</li>
+</ul>
+<p>It's worth reminding that each of <code>GOOS</code> and <code>GOARCH</code> and, therefore, the platform, can, and usually is, defined implicitly by inferring the value from the environment, if not set explicitly. When you're running <code>go build</code> on your Intel-based Mac without setting the environment variables, <code>GOOS=darwin</code> and <code>GOARCH=amd64</code> are supplied to the compiler. In this case, the target platform is <code>darwin/amd64</code>. On a Raspberry Pi under Linux, it would be <code>linux/arm</code> and additional <code>GOARM</code>. Similar effect can be achieved on any other platform with variables explicitly set as follows <code>GOOS=linux GOARCH=arm GOARM=6</code>.</p>
+<p>While we're on this topic, it's no harm in repeating that when only one of the variables specified to a value that is different from the current system value, the other is inferred from the current system. For the rest of the book, if not mentioned explicitly, the implied value of <code>GOARCH</code> is <code>amd64</code>.</p>
+<p>Okay, now we can move forward. The next section is a quick refresher of the compilation process, and then we dive into creating packages that support several platforms.</p>
+<h3 id="compiling-for-multiple-platforms"><a class="header" href="#compiling-for-multiple-platforms">Compiling For Multiple Platforms</a></h3>
+<p>Even if a project has no code that depends on a platform, the binary format has to match the requirements and expectations of a target system. In Go, there are two options for compiling code for more than one platform:</p>
+<ul>
+<li>simply building on each of the target platforms</li>
+<li>cross-compile for each of the supported platforms.</li>
+</ul>
+<p>With the first option, the code for each of the supported platforms is built on that platform. In its simplest form, the build process looks no different from what we do every day – <code>go build</code> is <code>go build</code>, after all. What differs is the artefact which is specific to the platform it has been built on.</p>
+<p>The second option offers a slightly different approach. The result is controlled by a pair of well-known environment variables that tell the compiler what it should produce. This process is also known as <strong>cross-compilation</strong>:</p>
+<pre><code class="language-bash">GOOS=freebsd GOARCH=amd64 go build -o myapp-freebsd-amd64
+GOOS=linux GOARCH=arm go build -o myapp-linux-arm
+GOOS=windows GOARCH=386 go build -o myapp-windows-386.exe
+GOOS=darwin GOARCH=amd64 go build -o myapp-darwin-amd64
+</code></pre>
+<p>Which of the two options when to use? It depends on your environment, priorities, available resources and limitations. The native compilation option is the easiest from the tooling perspective. You simply run the same set of tools to test and build code, and get the results. A major downside is the need to run and maintain instances of all platforms, which might be expensive as it requires some (potentially, significant) additional resources (i.e. costs you time, attention and money).</p>
+<p>On the other hand, the second option is less demanding to the build infrastructure. All code is built on the developers's machine or in a single instance of CI/CD. Platform-agnostic code is tested on the most available platform, but running tests for platform-specific code still requires native instances.</p>
+<p>So choose wisely. The guideline is to use cross-compilation for producing release artefacts, and to use specialised, automated test environment to run tests against platform-dependent code.</p>
+<p>It's worth noting that, in its simplest form, a cross-platform program has no differences in the implementation between supported platforms (not counting potential differences in the standard library). In such case, all what is needed is compiling a binary for each platform. That's exactly what we've just covered.</p>
+<p>Compiling code for multiple systems is a relatively easy step. But to build something, we have to write it first. The question is how to do it, and do it in a right way.</p>
+<h3 id="developing-for-multiple-platforms"><a class="header" href="#developing-for-multiple-platforms">Developing for Multiple Platforms</a></h3>
+<p>When working on functionality which involves special features of an operating system, a specialised implementation is required for the varying part. Then, different implementations need to be incorporated with the platform-independent business logic of the project.</p>
+<p>Go offers <strong>build constraints</strong> to enable conditional compilation. This allows to write specialised code for a particular platform, and guarantees that the code is included and available only when compiled for that target system. For all other platforms, which are not covered by constraints, such code simply does not exist.</p>
+<p>Build constraints can be expressed in two ways:</p>
+<ul>
+<li>using the file name</li>
+<li>using build tags.</li>
+</ul>
+<p>When compiling, the two environment variables <code>GOOS</code> and <code>GOARCH</code> and/or the build flag <code>-tags</code> are used to control the process. Specifically, these settings tell the compiler when and what to include in the resulting binary.</p>
+<p>As you will learn or remember soon, while the two ways under the hood work in the same way (due to the <code>go/build</code> package), in everyday development each of them has own pros and cons. They can be used independently in simple scenarios. More often though, they're used together as it allows more flexible behaviour, but sometimes it's just the only way to express the constraints. Let's briefly recap what each of them is, and then learn how to employ them to make the design of a package better.</p>
+<p><em>NOTICE:</em> The contents below covers topics such as using build tags and file names for conditional compilation. The text has been written when Go 1.16 has been released. Everything below applies for Go versions <em>up to 1.16</em>. Starting from version <strong>1.17</strong>, things will change. There is <a href="https://go.googlesource.com/proposal/+/master/design/draft-gobuild.md">a proposal</a> which has been <a href="https://github.com/golang/go/issues/41184">accepted</a>. This is going to be quite a large language change, on par with introduction of Modules. I will keep this part of the unit updated as the new behaviour is available, and it's clear what happens to the existing approach. For now, we focus on the existing way of managing compilation.</p>
+<h3 id="the-file-name"><a class="header" href="#the-file-name">The File Name</a></h3>
+<p>We start with the method based on the file name suffix. If a source file has a suffix that is a valid operating system, architecture or a combination of the two, then the file is compiled only for that platform.</p>
+<p>Here are some examples, for a package <code>mypkg</code>:</p>
+<ul>
+<li><code>mypkg_linux.go</code> is included in the binaries for Linux and any architecture (of course, for those that are supported by Go)</li>
+<li><code>mypkg_amd64.go</code> is included in binaries for any operating system running on the <code>amd64</code> architecture (also known as <code>x86_64</code>, <code>Intel 64</code>, but these are not valid names in Go)</li>
+<li><code>mypkg_windows_386.go</code> is included in the binary only when targeted at x86-based 32-bit Windows</li>
+<li><code>mypkg_posix.go</code> is included on any platform (remember, <code>platform = os + arch</code>, hence on any os and any arch) as <code>posix</code> is not a valid operating system nor architecture identifier for the Go toolchain.</li>
+</ul>
+<p><em>When</em> to include a file is controlled by the environment at the build time:</p>
+<ul>
+<li>when running <code>go build</code> the values are derived from the system the build is running on, i.e. your machine or the machine the command is executed on</li>
+<li>or when <code>GOOS</code> and/or <code>GOARCH</code> are explicitly set.</li>
+</ul>
+<p>This also works with testing. To write a platform-specific test you simply add the familiar <code>test</code> suffix to the end of the corresponding file name or to any file that will include such code:</p>
+<ul>
+<li><code>mypkg_linux_test.go</code> is included only when running <code>go test</code> on Linux, or <code>GOOS=linux go test</code> on any system</li>
+<li><code>mypkg_amd64_test.go</code> is included only when running <code>go test</code> on an x86-based 64-bit system, or <code>GOARCH=amd64 go test</code> on any other architecture</li>
+<li><code>mypkg_windows_386_test.go</code> is included only when running <code>go test</code> on an x86-based 32-bit Windows, or <code>GOOS=windows GOARCH=386 go test</code> on any system</li>
+<li>and so on.</li>
+</ul>
+<p>For all available GOOS and GOARCH valid values and combinations please visit <a href="https://golang.org/doc/install/source#environment">this page</a>.</p>
+<p>As you see, the approach offers an easy way for separating code for a particular system. It's enough in simple cases or when code is different between all the systems your project works on. But what if a more fine grained control is needed? Or what if code is the same for Windows and Linux, but is different for macOS?</p>
+<p>Another use case is including/excluding code at the compilation time based not only on a platform, or even not on the platform at all, but on a custom criterion. For example, you may want to include some features in the free version of your product, and other features only in the binary shipped to the paying users. You may even have multiple paid tiers with three sets of features, and the corresponding binaries should include all features from the preceding tiers plus something else. Or you may even want to offer different implementations of the same feature based on the tier?</p>
+<p>The answer to these and many other questions about conditional compilation is build tags.</p>
+<h3 id="build-tags"><a class="header" href="#build-tags">Build Tags</a></h3>
+<p>Build constraints in Go are expressed in a form of build tags. As you may already know, a build tag is a line comment that begins with <code>// +build</code> and lists the conditions under which a file should be included when compiling and/or testing the project.</p>
+<h4 id="basics"><a class="header" href="#basics">Basics</a></h4>
+<p>The following rules are in effect when using build constraints:</p>
+<ul>
+<li>multiple tags may be listed on the same line</li>
+<li>multiple lines with build tags may appear, one next to another</li>
+<li>tags may appear in any kind of source file (not limited to Go)</li>
+<li>constraints must appear close to the top of the file</li>
+<li>they may be preceded only by blank lines and other comments</li>
+<li>a series of build tag lines must be followed by an empty line (to distinguish from the documentation)</li>
+<li>all this means that in Go files, build constraints must appear only <strong>before</strong> the <code>package</code> clause.</li>
+</ul>
+<p>There are also certain rules for writing and grouping build tags:</p>
+<ul>
+<li>when listed on the same line, space-separated tags are interpreted as <code>OR</code></li>
+<li>if an option contains a comma, then it's evaluated as <code>AND</code> of its separated terms</li>
+<li>allowed symbols for a term are letters, digits, underscores and dots</li>
+<li>a term can be negated when preceded with an exclamation mark <code>!</code></li>
+<li>when constraints are expressed as multiple lines, the overall result is the <code>AND</code> of individual lines</li>
+<li>a special tag of <code>// +build ignore</code> can be used to exclude the file from consideration.</li>
+</ul>
+<p>Here are some examples:</p>
+<ul>
+<li>a simple build constraint</li>
+</ul>
+<pre><code class="language-golang">// +build linux,arm windows,386
+</code></pre>
+<p>It results to the following: <code>(linux AND arm) OR (windows AND 386)</code>.</p>
+<ul>
+<li>multiple build tags</li>
+</ul>
+<pre><code class="language-golang">// +build linux darwing
+// +build amd64
+</code></pre>
+<p>It results to the following: <code>(linux OR darwin) AND (amd64)</code></p>
+<ul>
+<li>with negation</li>
+</ul>
+<pre><code class="language-golang">// +build linux darwin,!cgo
+</code></pre>
+<p>Which results to <code>(linux) OR (darwin AND NOT cgo)</code>.</p>
+<h4 id="more-control"><a class="header" href="#more-control">More Control</a></h4>
+<p>The use of build tags is not limited to only platforms. Other conditions can be expressed in the very same way, for even more advanced control over the compilation. In the example below, we want to offer three tiers in the service – free, silver and gold. Each subsequent tier should include the features from the preceding tier. This is how it can be achieved on the compilation level which may help protect your app against cracking and/or bypassing licensing terms:</p>
+<ul>
+<li>define a base line, with no tags, in <code>base.go</code></li>
+<li>define a the first paid tier, or <code>silver</code> level, in <code>silver.go</code></li>
+</ul>
+<pre><code class="language-golang">// +build silver
+</code></pre>
+<ul>
+<li>define a the second paid tier, <code>gold</code>, in <code>gold.go</code></li>
+</ul>
+<pre><code class="language-golang">// +build silver
+// +build gold
+</code></pre>
+<p>Notice that we have to list the both tags, <code>silver</code> and <code>gold</code> for the second tier, as we want it to include the features from the preceding tier. That's because of the way how the boolean logic is expressed using the constraints.</p>
+<h4 id="passing-tags"><a class="header" href="#passing-tags">Passing Tags</a></h4>
+<p>Now, how to tell compiler about constraints?</p>
+<p>Build constraints are inferred from three places, two of which you already know:</p>
+<ul>
+<li>some environment variables, such as <code>GOOS</code>, <code>GOARCH</code>, <code>CGO_ENABLED</code>, etc</li>
+<li>the suffix of the name of a Go source file</li>
+<li>when explicitly passed as a special build flag of comma separated values when running <code>build</code>, <code>test</code> and other commands, as <code>-tag tag1,tag2,tag3</code>.</li>
+</ul>
+<p>Note that the file name's suffix method is mentioned here. That's because, as said earlier, under the hood it works as a build constraint. When a file has a suffix that matches a valid supported operating system, architecture, or a combination of the two, the file is considered to have an implicit build constraint set to the values in the suffix.</p>
+<h4 id="using-only-build-tags"><a class="header" href="#using-only-build-tags">Using Only Build Tags</a></h4>
+<p>Having reminded ourselves what a build tag is, let's continue exploring options for cross-platform development.</p>
+<p>As mentioned earlier, conditions for platform-dependent compilation can be expressed using file name suffixes. In a basic scenario, when the implementation details are different for, say, <code>windows</code> and <code>linux</code>, it's easy to express with <code>mypkg_windows.go</code> and <code>mypkg_linux.go</code>, in addition to <code>mypkg.go</code>.</p>
+<p>However, what to do when two different platforms have the exact same implementations? One way is to simply have two separate files with same contents. For example, <code>app_darwin.go</code> and <code>app_freebsd.go</code>. But this kind of duplication is not something we normally want, unless we have to.</p>
+<p>A much better approach is to use build tags for expressing conditions for the compilation process. It helps in making things cleaner and removes the need of duplicating the code. Add a build tag to the file, and give it a meaningful name that does not conflict with the supported operating systems, say <code>app_unix.go</code>:</p>
+<pre><code class="language-golang">// +build darwin freebsd
+</code></pre>
+<p>Now whenever the code is built on each of the mentioned platforms, or with the help of the environment variable <code>GOOS</code>, code will be included in binaries for either of the operating systems.</p>
+<h3 id="using-suffixes-and-tags"><a class="header" href="#using-suffixes-and-tags">Using Suffixes and Tags</a></h3>
+<p>Finally, let's consider another possible situation where a feature's implementation is different for some platforms, but is the same for others. The suffix-based method can be used in combination with build tags.</p>
+<p>To illustrate this situation, let's assume the low-level implementation is different for Windows on the one hand, and Linux with macOS on the other, though the latter is the same for Linux and macOS. Then a reasonable approach would be to put the Windows-specific code into <code>myapp_windows.go</code> file, and let the suffix control inclusion of this code. For Linux and macOS, put implementation into <code>myapp_posix.go</code> and add the following build constraint at the top of the file:</p>
+<pre><code class="language-golang">// +build linux darwin
+</code></pre>
+<p>And that's it. The environment variables and/or build flags passed to <code>go build</code> or <code>go test</code> are now in control of what's included during the process.</p>
+<h3 id="notes"><a class="header" href="#notes">Notes</a></h3>
+<p>As you see, Go offers convenient tools for writing, building and shipping cross-platform software. Those who wrote programs for more than one platform in the past agree that Go has made huge progress in making the process easier. Those who haven't got cross-platform experience yet would probably not be surprised, if the first experience happened to be with Go. But then they would definitely notice the difference if faced cross-platform development with other languages.</p>
+<p>These tools are great, but that's not enough on its own to produce great software and developer experience in short and long term. To achieve a good level of efficiency we need something else, and that's what the next section is about – actual advice on cross-platform packages.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="u02-10-basic-principles-cp.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="u02-10-basic-principles-cp.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
