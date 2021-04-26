@@ -1,0 +1,310 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js rust">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Good and Bad Layout - Golocron – Software Development With Go</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Design software for change">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "coal" : "rust";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="00-intro.html">Golocron</a></li><li class="chapter-item expanded affix "><li class="part-title">The Style Guide</li><li class="chapter-item expanded "><a href="u01-00-introduction.html"><strong aria-hidden="true">1.</strong> Project Layout</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="u01-01-good-and-bad-layout.html" class="active"><strong aria-hidden="true">1.1.</strong> Good and Bad Layout</a></li><li class="chapter-item expanded "><a href="u01-02-types-of-layouts.html"><strong aria-hidden="true">1.2.</strong> Types of Layouts</a></li><li class="chapter-item expanded "><a href="u01-03-common.html"><strong aria-hidden="true">1.3.</strong> Common</a></li><li class="chapter-item expanded "><a href="u01-04-library.html"><strong aria-hidden="true">1.4.</strong> Library</a></li><li class="chapter-item expanded "><a href="u01-05-single-application.html"><strong aria-hidden="true">1.5.</strong> Single Application</a></li><li class="chapter-item expanded "><a href="u01-06-monorepo.html"><strong aria-hidden="true">1.6.</strong> Monolithic Repository</a></li><li class="chapter-item expanded "><a href="u01-07-monorepo-extra.html"><strong aria-hidden="true">1.7.</strong> Monorepo: Additional Chapters</a></li><li class="chapter-item expanded "><a href="u01-08-versioning-and-go.html"><strong aria-hidden="true">1.8.</strong> Versioning and Go</a></li><li class="chapter-item expanded "><a href="u01-09-notes-on-release-notes.html"><strong aria-hidden="true">1.9.</strong> Notes on Release Notes</a></li><li class="chapter-item expanded "><a href="u01-10-summary.html"><strong aria-hidden="true">1.10.</strong> Summary</a></li></ol></li><li class="chapter-item expanded "><a href="u02-00-introduction.html"><strong aria-hidden="true">2.</strong> Package Layout</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="u02-01-what-is-a-package.html"><strong aria-hidden="true">2.1.</strong> What is a Package</a></li><li class="chapter-item expanded "><a href="u02-02-when-to-create-a-package.html"><strong aria-hidden="true">2.2.</strong> When to Create a Package</a></li><li class="chapter-item expanded "><a href="u02-03-keep-public-api-narrow.html"><strong aria-hidden="true">2.3.</strong> Keep Public API as Narrow as Possible</a></li><li class="chapter-item expanded "><a href="u02-04-the-main-package.html"><strong aria-hidden="true">2.4.</strong> The Main Package</a></li><li class="chapter-item expanded "><a href="u02-05-package-provides-something.html"><strong aria-hidden="true">2.5.</strong> Package Provides Something</a></li><li class="chapter-item expanded "><a href="u02-06-naming-a-package.html"><strong aria-hidden="true">2.6.</strong> Naming a Package</a></li><li class="chapter-item expanded "><a href="u02-07-structure.html"><strong aria-hidden="true">2.7.</strong> Structure</a></li><li class="chapter-item expanded "><a href="u02-08-files-in-a-package.html"><strong aria-hidden="true">2.8.</strong> Files in a Package</a></li><li class="chapter-item expanded "><a href="u02-09-cross-platform-code.html"><strong aria-hidden="true">2.9.</strong> Cross-Platform Code</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="u02-10-basic-principles-cp.html"><strong aria-hidden="true">2.9.1.</strong> Basic Principles of Writing Cross-Platform Code</a></li><li class="chapter-item expanded "><a href="u02-11-cp-options-in-go.html"><strong aria-hidden="true">2.9.2.</strong> Cross-Platform Options in Go</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.10.</strong> Package and File Organisation</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.11.</strong> Summary</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> File Layout</div></li><li class="chapter-item expanded affix "><li class="part-title">Foundation</li><li class="chapter-item expanded affix "><li class="part-title">Application Design</li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Golocron – Software Development With Go</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="good-and-bad-layout"><a class="header" href="#good-and-bad-layout">Good and Bad Layout</a></h2>
+<p>You can't know if something is good until you learn what a similar bad thing looks like. A bad thing might be perceived as good <em>until</em> you experience a truly good thing. Take, for instance, coffee. For someone who has never had it, almost any coffee can be considered as coffee, and it may even be unquestioned. But when after trying various kinds you take a sip of Supreme coffee made well, you no longer think that coffee from a Nespresso machine is tasty.</p>
+<p>So, what makes a project layout bad? Can it even be bad? Why should we bother about it?</p>
+<h3 id="bad-layout"><a class="header" href="#bad-layout">Bad Layout</a></h3>
+<p>Have you ever been supporting a project with so long list of files scattered in the root directory, so it takes you several scrolls to get to the README file on the project's repository homepage on GitHub?</p>
+<p>Have you ever been maintaining a project where half of the application is contained in the <code>main</code> package, and the entirety of the <code>main</code> package resides at the root level of the repository?</p>
+<p>How often do you find unnecessary artefacts in a repository after building an application or running tests?</p>
+<p>How often did you need to replace or move parts of a project and then fix the imports to fix an import cycle, or when the structure no longer makes sense?</p>
+<p>How often do you find a folder that exists only to contain another folder?</p>
+<p>Positive answers to any of these and other similar questions are signs of that you've encountered a bad project layout. When working with such a project, even as simple operation as building a binary can turn into trouble since you don't know whether the resulting binary will be accidentally included with the next commit or not.</p>
+<p>So what are the characteristics of a suboptimal layout anyway? It can be nearly anything that leads to any of the following symptoms:</p>
+<ul>
+<li>a long list of files scattered at the root or any other level of a project</li>
+<li>a long list directories scattered at the root or any other level of a project</li>
+<li>files of different purposes are mixed at the root or any other level
+<ul>
+<li>code and configuration files (the app's configuration files)</li>
+<li>code and CI scripts</li>
+<li>code and tool's configurations</li>
+<li>images or any other content</li>
+</ul>
+</li>
+<li>there is no definite place for outputting build artefacts</li>
+<li><code>.gitignore</code> does not exclude anything that should not be committed</li>
+<li>the structure does not support or reflect architecture of a project
+<ul>
+<li>having both <code>app</code> and <code>server</code> directories at the same level - does this project provide an app? Or a server? Or it's a poor project layout design?</li>
+</ul>
+</li>
+<li>the project structure leads to leakage of implementation details to the public API surface level
+<ul>
+<li>users can use parts of the implementation that are supposed to be internal</li>
+<li>thus maintenance of the project is now complicated and slowed down since the public API is much broader than it should be</li>
+</ul>
+</li>
+<li>the project structure is unnecessarily complicated and contains a multi-level hierarchy that implements a taxonomy of packages</li>
+</ul>
+<p>A mixture of even two of the symptoms listed above can significantly complicate project development and maintenance in long-term. Even worse may things become if a project is large, and is being developed by more than one person. Suffering can be endless, if that's an open-source project, and it's a popular one.</p>
+<p>So you really want to invest in a good project structure that will help and support you as the application evolves. What does make a good layout?</p>
+<h3 id="good-layout"><a class="header" href="#good-layout">Good Layout</a></h3>
+<p>Now as we have learned some of symptoms of a bad project layout, it's time to know how a good one looks and feels like?</p>
+<p>Overall, a good structure should be unnoticeable in everyday work. It exists, but as if it were invisible. Once defined, described and set, it just guides you. It limits the number of mistakes, helps to onboard new developers, supports maintenance routines, and does help in many other different ways. Let's look at some of those.</p>
+<p>A good design for layout suits well for a project:</p>
+<ul>
+<li>if a project is a library, the layout should reflect and <em>support</em> that</li>
+<li>if a project is an application, then the layout should make development and maintenance easier</li>
+<li>if a project uses the monolithic repository approach, it's clear where different services, libraries and other parts reside, and where to add new things.</li>
+</ul>
+<p>A good layout limits the chances of misplacing something:</p>
+<ul>
+<li>when files and directories are logically and functionally well organised, it's harder to misplace a new file</li>
+<li>the structure helps in deciding whether a new file should be a part of the existing tree, or it deserves a new level.</li>
+</ul>
+<p>A good layout reduces the mental load required to work with a project day by day:</p>
+<ul>
+<li>it's clear where binaries should go</li>
+<li>test coverage reports do not pollute commits</li>
+<li>changing CI configuration is straightforward</li>
+<li>files of different purposes are grouped in a way that makes logical and functional sense</li>
+<li>it's hard to accidentally commit and push garbage files.</li>
+</ul>
+<p>A good layout simplifies navigation through a project:</p>
+<ul>
+<li>it's convenient and easy to navigate in an editor/IDE</li>
+<li>the homepage looks nice and well organised</li>
+<li>in a terminal window, it's easy to work with files using standard and simple console tools.</li>
+</ul>
+<p>A good layout helps you to maintain a project in a healthy state:</p>
+<ul>
+<li>implementation details are kept private, yet still available as exported within a project</li>
+<li>the possibility of creating an import cycle is reduced by design</li>
+<li>the structure and hierarchy represent the business logic and relations between different parts of a project.</li>
+</ul>
+<p>As you can see, a good layout is more than just the opposite of the symptoms of a bad one. A good layout is the foundation for a development process focused on producing great software. If you have it, then you've got more mental energy to focus on creative solutions for hard problems. If you don't, then part of the energy is wasted.</p>
+<p>The layout of a project depends on many factors. The most important one is the kind of a project. The layout will be different for a library, a single application or service, and for a monolithic repository, while there are some commonalities that make better any kind of a project.</p>
+<p>As we now have learned what makes a good layout, it's time to know how to structure projects of different types.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="u01-00-introduction.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="u01-02-types-of-layouts.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="u01-00-introduction.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="u01-02-types-of-layouts.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

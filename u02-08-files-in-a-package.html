@@ -1,0 +1,313 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js rust">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Files in a Package - Golocron – Software Development With Go</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Design software for change">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "coal" : "rust";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="00-intro.html">Golocron</a></li><li class="chapter-item expanded affix "><li class="part-title">The Style Guide</li><li class="chapter-item expanded "><a href="u01-00-introduction.html"><strong aria-hidden="true">1.</strong> Project Layout</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="u01-01-good-and-bad-layout.html"><strong aria-hidden="true">1.1.</strong> Good and Bad Layout</a></li><li class="chapter-item expanded "><a href="u01-02-types-of-layouts.html"><strong aria-hidden="true">1.2.</strong> Types of Layouts</a></li><li class="chapter-item expanded "><a href="u01-03-common.html"><strong aria-hidden="true">1.3.</strong> Common</a></li><li class="chapter-item expanded "><a href="u01-04-library.html"><strong aria-hidden="true">1.4.</strong> Library</a></li><li class="chapter-item expanded "><a href="u01-05-single-application.html"><strong aria-hidden="true">1.5.</strong> Single Application</a></li><li class="chapter-item expanded "><a href="u01-06-monorepo.html"><strong aria-hidden="true">1.6.</strong> Monolithic Repository</a></li><li class="chapter-item expanded "><a href="u01-07-monorepo-extra.html"><strong aria-hidden="true">1.7.</strong> Monorepo: Additional Chapters</a></li><li class="chapter-item expanded "><a href="u01-08-versioning-and-go.html"><strong aria-hidden="true">1.8.</strong> Versioning and Go</a></li><li class="chapter-item expanded "><a href="u01-09-notes-on-release-notes.html"><strong aria-hidden="true">1.9.</strong> Notes on Release Notes</a></li><li class="chapter-item expanded "><a href="u01-10-summary.html"><strong aria-hidden="true">1.10.</strong> Summary</a></li></ol></li><li class="chapter-item expanded "><a href="u02-00-introduction.html"><strong aria-hidden="true">2.</strong> Package Layout</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="u02-01-what-is-a-package.html"><strong aria-hidden="true">2.1.</strong> What is a Package</a></li><li class="chapter-item expanded "><a href="u02-02-when-to-create-a-package.html"><strong aria-hidden="true">2.2.</strong> When to Create a Package</a></li><li class="chapter-item expanded "><a href="u02-03-keep-public-api-narrow.html"><strong aria-hidden="true">2.3.</strong> Keep Public API as Narrow as Possible</a></li><li class="chapter-item expanded "><a href="u02-04-the-main-package.html"><strong aria-hidden="true">2.4.</strong> The Main Package</a></li><li class="chapter-item expanded "><a href="u02-05-package-provides-something.html"><strong aria-hidden="true">2.5.</strong> Package Provides Something</a></li><li class="chapter-item expanded "><a href="u02-06-naming-a-package.html"><strong aria-hidden="true">2.6.</strong> Naming a Package</a></li><li class="chapter-item expanded "><a href="u02-07-structure.html"><strong aria-hidden="true">2.7.</strong> Structure</a></li><li class="chapter-item expanded "><a href="u02-08-files-in-a-package.html" class="active"><strong aria-hidden="true">2.8.</strong> Files in a Package</a></li><li class="chapter-item expanded "><a href="u02-09-cross-platform-code.html"><strong aria-hidden="true">2.9.</strong> Cross-Platform Code</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="u02-10-basic-principles-cp.html"><strong aria-hidden="true">2.9.1.</strong> Basic Principles of Writing Cross-Platform Code</a></li><li class="chapter-item expanded "><a href="u02-11-cp-options-in-go.html"><strong aria-hidden="true">2.9.2.</strong> Cross-Platform Options in Go</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.10.</strong> Package and File Organisation</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.11.</strong> Summary</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> File Layout</div></li><li class="chapter-item expanded affix "><li class="part-title">Foundation</li><li class="chapter-item expanded affix "><li class="part-title">Application Design</li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Golocron – Software Development With Go</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="files-in-a-package"><a class="header" href="#files-in-a-package">Files in a Package</a></h2>
+<p>The Go package system is simple and powerful. It helps you prepare the foundation for the project; it is very convenient, and allows you to have short and concise names. There is no need to duplicate the information in the name of a package that is already being communicated by the path to the package and its location.</p>
+<p>Up until now we've discussed mostly the ephemeral structure of a package - directories and naming. Code lives in files which a package is made of. How the files are named, how many of them, and how is the code split into files, are important and definitive aspects of the package design.</p>
+<p>Since Go offers its own approach to packages, it's important to survey guidelines on how to put files in a package together. This section provides some advice on how to organise a package from the file perspective. And then the next unit further expands the topic.</p>
+<p>Newcomers from other languages often don't know, nor do they learn the Go conventions, and use approaches that are unnatural and foreign to Go. Even those who envision themselves as seasoned Go developers, continue doing this unconsciously. It can be often found that a Go project looks much alike a PHP, Java, or C# one because the developer did not learn much about Go traditions and conventions. This leads to perpetuation of the problems that Go was created to solve.</p>
+<p>Very few people learn the Go way of doing things, and even fewer do actually apply it in practice. You don't even need to open up a single file in a project to notice influence from other languages, and lack of good design. Countless files and poor naming are just a few examples of what could be improved.</p>
+<p>A good design benefits from respecting and following Go-specific conventions. Some of the guidelines are:</p>
+<ul>
+<li>begin with a single file named after the package</li>
+<li>keep type's declaration and all its methods in the same file</li>
+<li>avoid creating file per object (type, function, etc)</li>
+<li>prefer fewer files larger in size instead of numerous small files</li>
+<li>when appropriate, move helpers in to a separate file</li>
+<li>when appropriate, use a separate file for documentation.</li>
+</ul>
+<p>Let us look at each of the suggestions closer.</p>
+<h3 id="begin-with-a-single-file-named-as-the-package"><a class="header" href="#begin-with-a-single-file-named-as-the-package">Begin With a Single File Named as the Package</a></h3>
+<p>Begin with a single file that is named after the package.</p>
+<p>In fact, this is two guidelines combined together:</p>
+<ul>
+<li>start with only one file</li>
+<li>name that file as the package is named.</li>
+</ul>
+<p>A default tendency observed in many engineers is creating a taxonomy of files right at the beginning. Those files are named arbitrary, mostly poorly, due to behavioural patterns developed while working with other languages. This is unnecessary, and leads to a mess, not to mention it goes against the good traditions Go has established.</p>
+<p>Instead, create just one file. Give it the same name as the package name. And then start adding some good code that you have thought about before writing.</p>
+<p>As the package evolves, and new code is being added, it's reasonable to think about when it's the right time to add another file to the package. This leads to a deeper question – when to split code into multiple files?</p>
+<h3 id="organise-files-by-topic-responsibility-and-behaviour"><a class="header" href="#organise-files-by-topic-responsibility-and-behaviour">Organise Files by Topic, Responsibility and Behaviour</a></h3>
+<p>Organise files by topic, responsibility and behaviour that are implemented in them. This is <strong>the</strong> criteria for splitting up a file into two.</p>
+<p>A package is started with a single file, and everything resides in that file. At some point, a new piece of functionality is about to be added, but that piece, while relating to the main theme of the package, is slightly different from the rest of the contents of the file. What to do?</p>
+<p>The answer depends on what is going to be added. If it's a type which one of the existing types will operate on, then it's better to keep them in the same file. It's also good to keep as many of similar objects in the same file as it makes sense. If you have multiple helper functions that are used as <code>http.HandlerFunc</code>, then it makes complete sense to keep them in the same file. Don't create a file per function only because it's a new function.</p>
+<p>Sometimes though it's better to split functionality into two files. For instance, you're working on a library, and there are two core parts to it - a server, and a client. It's beneficial to keep them separately, as their responsibilities and roles are quite different. But everything that has to do with either the server or client, should belong in the same file as the other type.</p>
+<h3 id="name-other-files-meaningfully"><a class="header" href="#name-other-files-meaningfully">Name Other Files Meaningfully</a></h3>
+<p>When adding files later, name them after the most important type declared in the file, or after the primary responsibility of the contents of the file.</p>
+<p>In Go, we name files after the most important thing in it. If it's hard to identify what's more important, then name it after the functionality it provides, or responsibility it carries.</p>
+<p>In other languages, a file is usually named after the class in it. While it's alright in Go, and is used often, this is not the only contributor to the name of a file.</p>
+<p>Make sure to use a <strong>single noun</strong>. Refrain from using plural nouns or other types of words.</p>
+<h3 id="avoid-creating-file-per-object"><a class="header" href="#avoid-creating-file-per-object">Avoid Creating File per Object</a></h3>
+<p>Avoid creating a file per object (type, function, etc).</p>
+<p>Please don't. Go is not Java, PHP, C# or any other language where creating a file per class is either a must, or a poor tradition. Go is also not C/C++ where you used to have a header and implementation file (we will mention this further).</p>
+<p>Instead, follow the guideline about the criteria for organising files above. Roles, responsibilities, behaviours – these are the right factors indicating whether the contents needs to be split into files or not.</p>
+<p>A file per type leads to the situations that have been considered in the previous sections and in the unit about project layout. Too many files complicate navigation, and increase cognitive load while working with a package, and so forth.</p>
+<h3 id="prefer-fewer-files-of-larger-size"><a class="header" href="#prefer-fewer-files-of-larger-size">Prefer Fewer Files of Larger Size</a></h3>
+<p>Prefer a fewer number of files of larger size instead of countless small files.</p>
+<p>This is a natural consequence of the preceding advice. Fewer files is easier to navigate through. It does not produce clutter neither in the browser or terminal window, nor in the IDE. It's easier to organise and keep tidy.</p>
+<h3 id="keep-methods-of-a-type-in-the-same-file"><a class="header" href="#keep-methods-of-a-type-in-the-same-file">Keep Methods of a Type in The Same File</a></h3>
+<p>Keep the type's declaration and all its methods in the same file. Period.</p>
+<p>One of the worst things one could do is split up the declaration of a type into multiple files. This is bad because of the increased effort required to maintain the mental map of a package, significantly reduced readability, and complicated understanding what the type does, its dependencies and responsibilities.</p>
+<p>The two biggest problems with methods of a type scattered across multiple files are:</p>
+<ul>
+<li>understanding what the type is responsible for. You simply never know it until all files in the package are checked.</li>
+<li>making changes to the type, especially changing an existing field of a method. Same problem as above, exacerbated by the fact that you have to check all the files in advance, as the change should be planned and thought about before you implement it. And, if implemented without the full picture, you may discover that the change does actually not make sense because of the way it's used on other place.</li>
+</ul>
+<p>So always keep everything that is part of the type declaration in the same file. Don't split the type declaration into several files. When a type is fully declared in a single place, it's easy to read and navigate through the code. The responsibilities and dependencies are easy to notice. It is also just easier to work with, literally.</p>
+<p>As soon as you find such a type, the best thing that can be done is immediately gather the type declaration in the single file. It will save a lot of resources for present and not-so-far-future you, and everyone else working on the project.</p>
+<p>There is one exception from this guideline, and we'll get back to it later. For now, it's sufficient to say that <strong>the only single reason</strong> for having some parts of a declaration in a separate file is implementing platform-dependent code. Otherwise, unless the exception is in effect, please don't.</p>
+<h3 id="avoid-ambiguous-file-names"><a class="header" href="#avoid-ambiguous-file-names">Avoid Ambiguous File Names</a></h3>
+<p>Avoid ambiguous names for files, such as <code>common</code>, <code>types</code>, etc.</p>
+<p>The motivation is similar to the name of a package. Such names carry zero useful information about the contents. Our goal is to reduce energy required to understand what's happening in a package. Names like <code>common</code> complicate the task because it does not give any hint on what's in the file named as such.</p>
+<p>The name <code>types</code> does not make sense as per the guidelines given above which recommend naming a file after the most important thing in it, and grouping contents by roles. It's impossible to have a file named <code>types</code> in a well-designed package. If you have one, you know what to do.</p>
+<h3 id="use-a-separate-file-for-documentation-when-appropriate"><a class="header" href="#use-a-separate-file-for-documentation-when-appropriate">Use a Separate File for Documentation When Appropriate</a></h3>
+<p>Use a separate file for documentation in a package which provides detailed explanations.</p>
+<p>As you know, the top-level comment immediately preceding the <code>package</code> clause is the package comment. The first sentence <strong>is</strong> the package comment, and it can be optionally followed by a larger comment that is considered as a package-wide documentation.</p>
+<p>Normally, the package comment must be written at the first file of a package. When you provide your users with detailed documentation, it would be good to keep it separate from the rest of code, but still within the package, so the Go documentation routines (<code>godoc</code>) are able to parse it.</p>
+<p>There is a solution to this. Simply put the documentation along with the package comment in a file named <code>doc.go</code>. Normally and conventionally, the only content of this file is the package and documentation comments. Avoid adding anything else here.</p>
+<pre><code class="language-golang">/*
+Package mypackage provides a convenient way to do X. &lt;- the package comment
+
+It achieves high performance by doing X using Y and Z.
+
+Here is an example of using it.
+
+Here is another one.
+
+And here are some explanations about why is it valuable or any other useful information.
+*/
+package mypackage
+</code></pre>
+<p>Remember that this only makes sense for packages that have detailed documentation written in a specific way, i.e. the way <code>godoc</code> is able to understand. Otherwise, prefer more traditional places for documentation, such as  README files, documentation sites, etc.</p>
+<p>Before we get to discussing how to organise a file internally in the lights of package design, there is one topic that is worth mentioning. The package layout is especially important when working on/with cross-platform software.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="u02-07-structure.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="u02-09-cross-platform-code.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="u02-07-structure.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="u02-09-cross-platform-code.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

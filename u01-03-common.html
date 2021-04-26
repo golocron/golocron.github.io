@@ -1,0 +1,333 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js rust">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Common - Golocron – Software Development With Go</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Design software for change">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "coal" : "rust";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="00-intro.html">Golocron</a></li><li class="chapter-item expanded affix "><li class="part-title">The Style Guide</li><li class="chapter-item expanded "><a href="u01-00-introduction.html"><strong aria-hidden="true">1.</strong> Project Layout</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="u01-01-good-and-bad-layout.html"><strong aria-hidden="true">1.1.</strong> Good and Bad Layout</a></li><li class="chapter-item expanded "><a href="u01-02-types-of-layouts.html"><strong aria-hidden="true">1.2.</strong> Types of Layouts</a></li><li class="chapter-item expanded "><a href="u01-03-common.html" class="active"><strong aria-hidden="true">1.3.</strong> Common</a></li><li class="chapter-item expanded "><a href="u01-04-library.html"><strong aria-hidden="true">1.4.</strong> Library</a></li><li class="chapter-item expanded "><a href="u01-05-single-application.html"><strong aria-hidden="true">1.5.</strong> Single Application</a></li><li class="chapter-item expanded "><a href="u01-06-monorepo.html"><strong aria-hidden="true">1.6.</strong> Monolithic Repository</a></li><li class="chapter-item expanded "><a href="u01-07-monorepo-extra.html"><strong aria-hidden="true">1.7.</strong> Monorepo: Additional Chapters</a></li><li class="chapter-item expanded "><a href="u01-08-versioning-and-go.html"><strong aria-hidden="true">1.8.</strong> Versioning and Go</a></li><li class="chapter-item expanded "><a href="u01-09-notes-on-release-notes.html"><strong aria-hidden="true">1.9.</strong> Notes on Release Notes</a></li><li class="chapter-item expanded "><a href="u01-10-summary.html"><strong aria-hidden="true">1.10.</strong> Summary</a></li></ol></li><li class="chapter-item expanded "><a href="u02-00-introduction.html"><strong aria-hidden="true">2.</strong> Package Layout</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="u02-01-what-is-a-package.html"><strong aria-hidden="true">2.1.</strong> What is a Package</a></li><li class="chapter-item expanded "><a href="u02-02-when-to-create-a-package.html"><strong aria-hidden="true">2.2.</strong> When to Create a Package</a></li><li class="chapter-item expanded "><a href="u02-03-keep-public-api-narrow.html"><strong aria-hidden="true">2.3.</strong> Keep Public API as Narrow as Possible</a></li><li class="chapter-item expanded "><a href="u02-04-the-main-package.html"><strong aria-hidden="true">2.4.</strong> The Main Package</a></li><li class="chapter-item expanded "><a href="u02-05-package-provides-something.html"><strong aria-hidden="true">2.5.</strong> Package Provides Something</a></li><li class="chapter-item expanded "><a href="u02-06-naming-a-package.html"><strong aria-hidden="true">2.6.</strong> Naming a Package</a></li><li class="chapter-item expanded "><a href="u02-07-structure.html"><strong aria-hidden="true">2.7.</strong> Structure</a></li><li class="chapter-item expanded "><a href="u02-08-files-in-a-package.html"><strong aria-hidden="true">2.8.</strong> Files in a Package</a></li><li class="chapter-item expanded "><a href="u02-09-cross-platform-code.html"><strong aria-hidden="true">2.9.</strong> Cross-Platform Code</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="u02-10-basic-principles-cp.html"><strong aria-hidden="true">2.9.1.</strong> Basic Principles of Writing Cross-Platform Code</a></li><li class="chapter-item expanded "><a href="u02-11-cp-options-in-go.html"><strong aria-hidden="true">2.9.2.</strong> Cross-Platform Options in Go</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.10.</strong> Package and File Organisation</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.11.</strong> Summary</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> File Layout</div></li><li class="chapter-item expanded affix "><li class="part-title">Foundation</li><li class="chapter-item expanded affix "><li class="part-title">Application Design</li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Golocron – Software Development With Go</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="common"><a class="header" href="#common">Common</a></h2>
+<p>The ultimate goal of choosing an appropriate structure is to keep things nice and tidy which simplifies interactions with a codebase.</p>
+<p>This includes:</p>
+<ul>
+<li>providing required files for a project</li>
+<li>keeping the number of elements at the root level at a reasonable minimum</li>
+<li>keeping the root (and any other) level clean and up to date</li>
+<li>grouping non-code files by their purpose</li>
+<li>refraining from creating unnecessary hierarchy of folders</li>
+<li>having a single entry point for routine tasks</li>
+<li>storing credentials somewhere else</li>
+</ul>
+<p>Let's talk about these in more detail.</p>
+<h3 id="provide-files-required-for-a-project"><a class="header" href="#provide-files-required-for-a-project">Provide Files Required for a Project</a></h3>
+<p>A project should contain files that describe its purpose, provide required information for the programming language and tools, and simplify its maintenance.</p>
+<p>The following files are considered as required:</p>
+<table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>.gitignore</code></td><td>Provides rules that govern what's allowed to be committed. It helps keeping a repository free from garbage files.</td></tr>
+<tr><td><code>go.mod</code>, <code>go.sum</code></td><td>Identify a Go module.</td></tr>
+<tr><td><code>README.md</code></td><td>Provides the description and any useful information and documentation for a project.</td></tr>
+<tr><td><code>LICENCE</code></td><td>Provides clarity on licensing for a project, and helps to avoid potential legal inconveniences.</td></tr>
+<tr><td><code>Makefile</code></td><td>Provides a single entry point to all maintenance and routine tasks.</td></tr>
+</tbody></table>
+<p>The files listed above are a bare minimum, but required for a modern project. You do this once, but if it's done right, it helps you all the way further.</p>
+<p>One thing to note is that even with no code at all, a repository is likely to contain about 6 files. This is why the next suggestion is important.</p>
+<h3 id="keep-the-number-of-root-elements-at-minimum"><a class="header" href="#keep-the-number-of-root-elements-at-minimum">Keep the Number of Root Elements at Minimum</a></h3>
+<p>The number of folders and files at the root level should be as minimal as it's possible and makes sense.</p>
+<p>It's important because it allows you to stay focused on the task you intend to perform, and not be distracted by the need of wading through the files, scripts and configs.</p>
+<p>To continue our clothes analogy, it's like with a wardrobe - in the morning it's better to take a nicely folded thing from a shelf. But this convenience costs you the responsibility. To get it, you have to fold clothes neatly after the use, and it's also important to carefully choose what to put into the wardrobe.</p>
+<p>While this suggestion sounds vague, and it is, it can help you. Each time when you're about to add something at the root level, by default question the need. Usually, things are set at the root level at the beginning, and then added here rarely. When you justify the presence of something at the top level, think twice about a better place for a file/folder, or if it's needed at all.</p>
+<h3 id="keep-any-level-clean-and-up-to-date"><a class="header" href="#keep-any-level-clean-and-up-to-date">Keep Any Level Clean and Up to Date</a></h3>
+<p>Similarly to the root level, any level of the file tree in a project should be clean, with reasonably minimal number of files, free from garbage, and up to date.</p>
+<p>This is important because:</p>
+<ul>
+<li>long file listings make navigation harder</li>
+<li>poor organisation complicates maintenance of the mental model of a project in the developer's head</li>
+<li>out-of-date files take up extra mental and physical space</li>
+<li>accidentally committed files are misleading and confusing.</li>
+</ul>
+<p>When a new developer joins a project, how much time do they need to get a firm understanding of what's going on in a project? Does the structure help and guide your colleagues through the project? Does it reduce the effort to keep the important details in their heads? Or do they have to stop for a moment each time when stumbled upon a file which no one knows about, whether it's current or not?</p>
+<p>A well-organised and maintained project itself helps people in their everyday jobs. Each time when adding a new file, think twice what <em>else</em> can be added in it further. When creating a directory, consider different scenarios a few months in advance. You don't want to end up with a mess one year after, and tidying up a larger and live project is much more of an effort than keeping it clean everyday. If the structure is supported on a daily basis, it will pay off in long-term.</p>
+<p>While it's important to have a neat structure, sometimes it's easy to get too serious about a hierarchy. This is what the next suggestion is about.</p>
+<h3 id="dont-create-artificial-hierarchy"><a class="header" href="#dont-create-artificial-hierarchy">Don't Create Artificial Hierarchy</a></h3>
+<p>Keep the directory tree in a project as flat as it possible and makes sense. In other words, don't create artificial hierarchy just for the sake of hiding something.</p>
+<p>This applies to both, files containing actual code (and we will discuss it in Unit 2), and other files like scripts, configurations, documentation, etc.</p>
+<p>A general piece of advice here is that any directory that contains only a single or multiple directories, or a single file, should be questioned for its purpose and existence. Does it belong in here, or somewhere else? Sometimes it might not be clear at the beginning, and this is why it's important to think about evolution of a project some time further.</p>
+<p>Consider a situation with scripts. One might have a root-level directory called <code>scripts</code>, and the directory contains several files providing tools for CI/CD process, maybe tests, some pre- and post-install steps. That's a good example.</p>
+<p>On the opposite, consider the same number of files but located under separate directories like <code>scripts/build/build.sh</code>, <code>scripts/install/install.sh</code>, and then <code>scripts/ci.sh</code> that sources those files. Don't do this.</p>
+<p>Here's another example. Say we have an <code>http</code> directory. From here, we've got two options. If we know <em>for sure</em> that there will be no other networking stuff in the project any time soon (means a couple of years), then it makes sense to keep it simply as <code>http</code>. On the other hand, if there is a non-zero chance of implementing things for <code>smtp</code> and <code>dns</code>, then it does make sense to put it under <code>net</code>. Later, everyone will be happier with the structure because it reflects the nature of things and supports the purpose of the files.</p>
+<p>At this point, it becomes clear that grouping for files and folders should be done based on its purpose. Even for non-code files.</p>
+<h3 id="group-non-code-files-by-their-purpose"><a class="header" href="#group-non-code-files-by-their-purpose">Group Non-Code Files by Their Purpose</a></h3>
+<p>Group and keep maintenance and routine files together by their purpose, in one or a few directories.</p>
+<p>This helps in keeping the root level free from clatter, as well as reduces the time required to find a file when looking at the listing. You simply know where all your scripts reside, so no time and energy is wasted. When a new developer joins the project, they need minimal time to get an idea of what is where. Everyone is a bit happier.</p>
+<p>As it was shown previously, group all scripts in the <code>scripts</code> directory. If there is plenty of them, and they're specific to the project itself (like startup scripts, init system scripts, cron files, etc), then it might make sense to keep the CI/CD stuff separately. Stay lean though, having <code>ci/scripts</code> and <code>scripts</code> is not a good sign. What else do you have for CI but scripts? If that's a couple of yaml files, let them stay under the same <code>ci</code> directory (see the previous point).</p>
+<p>Nowadays many projects use Docker. If a project uses only one <code>Dockerfile</code>, and maybe one file for Docker Compose, then it's fine to keep them at the root. If you have multiple Docker files, and also have some scripts for building containers, then keep them grouped in a directory.</p>
+<p>At this point, a valid concern may arise: if all those tools are in directories, it's less convenient to type commands in the terminal. This is what the next recommendation helps you with.</p>
+<h3 id="provide-the-makefile"><a class="header" href="#provide-the-makefile">Provide the Makefile</a></h3>
+<p>Provide the Makefile for a project to automate and simplify routine and maintenance tasks.</p>
+<p>The <code>make</code> tool is available on almost any platform one can imagine, even on Windows without WSL. A minimal knowledge of the syntax of a Makefile is enough to produce a handy set of targets that simplify everyday workflows. The tool have existed for more than 44 years now, and it's likely to continue existing for another 40 years. And in the course of its life, the syntax hasn't changed very much. So it makes a lot of sense investing in learning it once, and benefit from it for the rest of your career.</p>
+<p>Just to give you an idea how it can be helpful, consider several, rather basic, examples below.</p>
+<ol>
+<li>Building a binary.</li>
+</ol>
+<p>Without <code>make</code> and Makefile:</p>
+<pre><code class="language-bash">GOOS=linux GOARCH=amd64 go build -ldflags &quot;-X main.revision=`git rev-parse --short HEAD`&quot; -o bin/my-app ./cmd/my-app
+</code></pre>
+<p>With <code>make</code>:</p>
+<pre><code class="language-bash">make my-app
+</code></pre>
+<ol start="2">
+<li>Building a container and running an app in it.</li>
+</ol>
+<p>Without <code>make</code>:</p>
+<pre><code class="language-bash">docker-compose build --no-cache my-app
+docker-compose up -d my-app
+</code></pre>
+<p>With <code>make</code>:</p>
+<pre><code class="language-bash">make run-my-app
+</code></pre>
+<p>And so forth. While being basic, these examples make a huge difference in everyday experience.</p>
+<p>To make your and colleagues' lives easier, define all routine tasks as targets in the Makefile. It can be then used not only by developers directly, but also  in your CI/CD scenarios. This makes the configurations clean, straightforward, and easy to understand and maintain.</p>
+<p>It's important to give targets in the Makefile meaningful names. A meaningful name reflects the purpose and meaning of the operation it describes. When this is done well, instead of cryptic bash incantations your config for CI may look something like the one below. Pretty nice, isn't it?</p>
+<pre><code class="language-yaml"># skipped
+
+script:
+  - make test
+  - make cover
+  - make build
+  - make deploy
+
+# skipped
+</code></pre>
+<p>We're almost done with common suggestions. Last in the list, but not the least in importance, is a piece of advice about storing credentials.</p>
+<h3 id="store-credentials-somewhere-else"><a class="header" href="#store-credentials-somewhere-else">Store Credentials Somewhere Else</a></h3>
+<p>Under no circumstance should you store any sensitive data in a repository, even if it's a private one. Just don't do that.</p>
+<p>Don't add ssh keys, files with passwords, private ssl keys, API or any other credentials. It's alright if a repository contains those for development purpose. Anything else is a taboo. Good sleep at night is worth more than deceptive convenience of having production credentials committed to a repository.</p>
+<p>What can be used instead? A private bucket in a block storage that contains an encrypted file with credentials might do a good job. A specialised service from your cloud provider of choice might help too. A special service running in your infrastructure that is responsible for storing and providing other services with sensitive data may be even a better option. But once again, do not store any credentials in a repository along with code.</p>
+<hr />
+<p>All these suggestions are supposed to help and support a team working with a project throughout its lifecycle. Considered and implemented carefully, they form a strong foundation for the project's success.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="u01-02-types-of-layouts.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="u01-04-library.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="u01-02-types-of-layouts.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="u01-04-library.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

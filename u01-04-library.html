@@ -1,0 +1,305 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js rust">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Library - Golocron – Software Development With Go</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Design software for change">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "coal" : "rust";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="00-intro.html">Golocron</a></li><li class="chapter-item expanded affix "><li class="part-title">The Style Guide</li><li class="chapter-item expanded "><a href="u01-00-introduction.html"><strong aria-hidden="true">1.</strong> Project Layout</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="u01-01-good-and-bad-layout.html"><strong aria-hidden="true">1.1.</strong> Good and Bad Layout</a></li><li class="chapter-item expanded "><a href="u01-02-types-of-layouts.html"><strong aria-hidden="true">1.2.</strong> Types of Layouts</a></li><li class="chapter-item expanded "><a href="u01-03-common.html"><strong aria-hidden="true">1.3.</strong> Common</a></li><li class="chapter-item expanded "><a href="u01-04-library.html" class="active"><strong aria-hidden="true">1.4.</strong> Library</a></li><li class="chapter-item expanded "><a href="u01-05-single-application.html"><strong aria-hidden="true">1.5.</strong> Single Application</a></li><li class="chapter-item expanded "><a href="u01-06-monorepo.html"><strong aria-hidden="true">1.6.</strong> Monolithic Repository</a></li><li class="chapter-item expanded "><a href="u01-07-monorepo-extra.html"><strong aria-hidden="true">1.7.</strong> Monorepo: Additional Chapters</a></li><li class="chapter-item expanded "><a href="u01-08-versioning-and-go.html"><strong aria-hidden="true">1.8.</strong> Versioning and Go</a></li><li class="chapter-item expanded "><a href="u01-09-notes-on-release-notes.html"><strong aria-hidden="true">1.9.</strong> Notes on Release Notes</a></li><li class="chapter-item expanded "><a href="u01-10-summary.html"><strong aria-hidden="true">1.10.</strong> Summary</a></li></ol></li><li class="chapter-item expanded "><a href="u02-00-introduction.html"><strong aria-hidden="true">2.</strong> Package Layout</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="u02-01-what-is-a-package.html"><strong aria-hidden="true">2.1.</strong> What is a Package</a></li><li class="chapter-item expanded "><a href="u02-02-when-to-create-a-package.html"><strong aria-hidden="true">2.2.</strong> When to Create a Package</a></li><li class="chapter-item expanded "><a href="u02-03-keep-public-api-narrow.html"><strong aria-hidden="true">2.3.</strong> Keep Public API as Narrow as Possible</a></li><li class="chapter-item expanded "><a href="u02-04-the-main-package.html"><strong aria-hidden="true">2.4.</strong> The Main Package</a></li><li class="chapter-item expanded "><a href="u02-05-package-provides-something.html"><strong aria-hidden="true">2.5.</strong> Package Provides Something</a></li><li class="chapter-item expanded "><a href="u02-06-naming-a-package.html"><strong aria-hidden="true">2.6.</strong> Naming a Package</a></li><li class="chapter-item expanded "><a href="u02-07-structure.html"><strong aria-hidden="true">2.7.</strong> Structure</a></li><li class="chapter-item expanded "><a href="u02-08-files-in-a-package.html"><strong aria-hidden="true">2.8.</strong> Files in a Package</a></li><li class="chapter-item expanded "><a href="u02-09-cross-platform-code.html"><strong aria-hidden="true">2.9.</strong> Cross-Platform Code</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="u02-10-basic-principles-cp.html"><strong aria-hidden="true">2.9.1.</strong> Basic Principles of Writing Cross-Platform Code</a></li><li class="chapter-item expanded "><a href="u02-11-cp-options-in-go.html"><strong aria-hidden="true">2.9.2.</strong> Cross-Platform Options in Go</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.10.</strong> Package and File Organisation</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.11.</strong> Summary</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> File Layout</div></li><li class="chapter-item expanded affix "><li class="part-title">Foundation</li><li class="chapter-item expanded affix "><li class="part-title">Application Design</li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Golocron – Software Development With Go</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="library"><a class="header" href="#library">Library</a></h2>
+<p>We create libraries for re-using in different places, projects, and by other people. The library's code is read more often than it's modified, simply because it's maintained by a limited number of people, whereas the number of users can be much higher. This is especially true for an open-source library. The library's code is consumed by a computer, but a person is the user and who interacts with it.</p>
+<p>The layout of a library project should take these factors into account. This means that the layout needs to be optimised for interaction with the user, a person. We seek for answers in documentation, and read the code provided by a library to understand how it works. If a library is well-organised and neat, the process of using it smooth and unobtrusive.</p>
+<p>So how can we make this interaction more positive from the layout perspective? If the <a href="u01-03-common.html#common">Common guidelines</a> are taken into account and implemented, that's mostly enough. They cover the most important aspects, and can and should be applied to a library project. Additionally, the following will help you in providing a better experience for the users of a library:</p>
+<ul>
+<li>providing a good README file</li>
+<li>keeping the number of files at the top level of a manageable size</li>
+<li>providing examples of using the library</li>
+<li>providing benchmarking information, if applicable</li>
+</ul>
+<p>The rest of the section describes these suggestions in detail.</p>
+<h3 id="provide-a-good-readme-file"><a class="header" href="#provide-a-good-readme-file">Provide a Good README File</a></h3>
+<p>Provide a well-organised README file with the most important information about the library.</p>
+<p>The README file should give answers to the following questions:</p>
+<ul>
+<li>What is it?
+Provide a short description of the library. Ideally, one-two sentences.</li>
+<li>What does it do?
+Describe the problem the library is solving.</li>
+<li>Why does it exist?
+It should be clear why this library exists, especially if it's not the only library solving a particular problem. What does it do differently from others in its area?</li>
+<li>How does it solve the problem?
+Give the users an idea on what's going on under the hood, and what to expect from it.</li>
+</ul>
+<p>In addition to the above, the README should contain links to related resources like:</p>
+<ul>
+<li>the GoDoc page</li>
+<li>any resources that describe details of algorithms or approaches taken in the library</li>
+<li>articles or other resources that might be related to the topic.</li>
+</ul>
+<p>Your goal with the README file is to help your users in answering the most important question about the library: &quot;Does it help me in solving my problem?&quot;. Even if a library does solve a hard problem in a great way, if it isn't reflected in the documentation, that might be unnoticed, thus leading to less people using the library. A well-prepared README file helps your users to answer their questions.</p>
+<h3 id="keep-the-top-level-list-of-a-manageable-size"><a class="header" href="#keep-the-top-level-list-of-a-manageable-size">Keep the Top-Level List of a Manageable Size</a></h3>
+<p>Keep the root level list of files short and focused. While this sounds very similar to <a href="u01-03-common.html#keep-the-number-of-root-elements-at-minimum">this guideline</a>, it's worth a mention here.</p>
+<p>Strive to keep the number of root elements such that it takes less than a full page height, so the user doesn't need to scroll to get to the README. It's also important when the user interacts with a library from their IDE. An endless list of files visually complicates navigation, and gives an impression of a poor organisation.</p>
+<p>Additional recommendations will be given further in the unit about designing a good layout for a package.</p>
+<h3 id="provide-examples"><a class="header" href="#provide-examples">Provide Examples</a></h3>
+<p>In the README, provide clear examples of using your library.</p>
+<p>A user should not be forced to go to the GoDoc page, or consult with the code on what using the library looks like. Think about possible use cases, and provide appropriate examples that show it.</p>
+<p>Pay special attention to <em>how</em> you're showing the use of the library. Write high-quality code as if it was production code. A half, if not more, of the users will copy and paste code from the examples as it is given. So make sure the examples are not misleading, and do not contain things that you wouldn't want to find in your own production codebase.</p>
+<p>Follow these suggestions in order to provide your users with good and quality examples:</p>
+<ul>
+<li>handle errors properly instead of omitting them</li>
+<li>avoid globals as much as possible</li>
+<li>avoid using the <code>init</code> function</li>
+<li>use regular imports instead of dot-imports</li>
+<li>handle errors properly instead of instead of <code>panic</code>-ing, <code>log.Fatal</code>-ing.</li>
+</ul>
+<p>This is not an exhaustive list, and more detail will be given in the unit about writing good code. But this short list is enough to make examples better, as well as the code that your users write.</p>
+<h3 id="provide-benchmarking-results"><a class="header" href="#provide-benchmarking-results">Provide Benchmarking Results</a></h3>
+<p>Provide benchmarks whenever possible.</p>
+<p>When someone uses your library, it becomes part of their application. For those who do care about performance, it's important. Those who aren't interested in performance, will skip it. But those who are, will appreciate that. Oftentimes, performance is what differentiates one library from another, and the interested users would love to know about it.</p>
+<p>Go provides us with all we need to write benchmarks, and to share the results with our users. So help your users in making the decision about the library, write and run benchmarks, and add the results to the README. Then, keep it up to date.</p>
+<hr />
+<p>The suggestions given above are simple, yet not always easy to follow. Take the time, make sure the project is prepared and organised. Eventually, the users of the library will find it helpful, and they will thank you for having done this for them.</p>
+<h3 id="examples"><a class="header" href="#examples">Examples</a></h3>
+<p>Below you can find some examples of well-prepared libraries, and a few that could have been organised better.</p>
+<h4 id="good-examples"><a class="header" href="#good-examples">Good Examples</a></h4>
+<ul>
+<li><a href="https://github.com/julienschmidt/httprouter">julienschmidt/httprouter</a></li>
+<li><a href="https://github.com/dimfeld/httptreemux">dimfeld/httptreemux</a></li>
+<li><a href="https://github.com/jmoiron/sqlx">jmoiron/sqlx</a></li>
+<li><a href="https://github.com/rs/xid">rs/xid</a></li>
+<li><a href="https://github.com/cryptowatch/cw-sdk-go">cryptowatch/cw-sdk-go</a></li>
+</ul>
+<h4 id="can-be-improved"><a class="header" href="#can-be-improved">Can Be Improved</a></h4>
+<ul>
+<li><a href="https://github.com/lib/pq">lib/pq</a>
+While the README lists some features, it doesn't answer many questions, nor it gives us examples of using it, benchmarks, or any other information about why should we use it. The file organisation could also be improved.</li>
+<li><a href="https://github.com/go-redis/redis/tree/v7">go-redis/redis</a>
+As the number of Redis clients is relatively high, it would be valuable to provide users with comparisons and benchmarks that show the difference from other packages. Also, the structure of the repository can be better as not everything need to live at the root level of the package.</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="u01-03-common.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="u01-05-single-application.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="u01-03-common.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="u01-05-single-application.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
