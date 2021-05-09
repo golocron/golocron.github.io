@@ -1,0 +1,440 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js rust">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Strive for Platform-Independent Tests - Golocron – Software Development With Go</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Design software for change">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "coal" : "rust";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="u00-intro.html">Golocron</a></li><li class="chapter-item expanded affix "><li class="part-title">The Style Guide</li><li class="chapter-item expanded "><a href="u01-00-introduction.html"><strong aria-hidden="true">1.</strong> Project Layout</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="u01-01-good-and-bad-layout.html"><strong aria-hidden="true">1.1.</strong> Good and Bad Layout</a></li><li class="chapter-item expanded "><a href="u01-02-types-of-layouts.html"><strong aria-hidden="true">1.2.</strong> Types of Layouts</a></li><li class="chapter-item expanded "><a href="u01-03-common.html"><strong aria-hidden="true">1.3.</strong> Common</a></li><li class="chapter-item expanded "><a href="u01-04-library.html"><strong aria-hidden="true">1.4.</strong> Library</a></li><li class="chapter-item expanded "><a href="u01-05-single-application.html"><strong aria-hidden="true">1.5.</strong> Single Application</a></li><li class="chapter-item expanded "><a href="u01-06-monorepo.html"><strong aria-hidden="true">1.6.</strong> Monolithic Repository</a></li><li class="chapter-item expanded "><a href="u01-07-monorepo-extra.html"><strong aria-hidden="true">1.7.</strong> Monorepo: Additional Chapters</a></li><li class="chapter-item expanded "><a href="u01-08-versioning-and-go.html"><strong aria-hidden="true">1.8.</strong> Versioning and Go</a></li><li class="chapter-item expanded "><a href="u01-09-notes-on-release-notes.html"><strong aria-hidden="true">1.9.</strong> Notes on Release Notes</a></li><li class="chapter-item expanded "><a href="u01-10-summary.html"><strong aria-hidden="true">1.10.</strong> Summary</a></li></ol></li><li class="chapter-item expanded "><a href="u02-00-introduction.html"><strong aria-hidden="true">2.</strong> Package Layout</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="u02-01-what-is-a-package.html"><strong aria-hidden="true">2.1.</strong> What is a Package</a></li><li class="chapter-item expanded "><a href="u02-02-when-to-create-a-package.html"><strong aria-hidden="true">2.2.</strong> When to Create a Package</a></li><li class="chapter-item expanded "><a href="u02-03-keep-public-api-narrow.html"><strong aria-hidden="true">2.3.</strong> Keep Public API as Narrow as Possible</a></li><li class="chapter-item expanded "><a href="u02-04-the-main-package.html"><strong aria-hidden="true">2.4.</strong> The Main Package</a></li><li class="chapter-item expanded "><a href="u02-05-package-provides-something.html"><strong aria-hidden="true">2.5.</strong> Package Provides Something</a></li><li class="chapter-item expanded "><a href="u02-06-naming-a-package.html"><strong aria-hidden="true">2.6.</strong> Naming a Package</a></li><li class="chapter-item expanded "><a href="u02-07-structure.html"><strong aria-hidden="true">2.7.</strong> Structure</a></li><li class="chapter-item expanded "><a href="u02-08-files-in-a-package.html"><strong aria-hidden="true">2.8.</strong> Files in a Package</a></li><li class="chapter-item expanded "><a href="u02-09-cross-platform-code.html"><strong aria-hidden="true">2.9.</strong> Cross-Platform Code</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="u02-10-basic-principles-cp.html"><strong aria-hidden="true">2.9.1.</strong> Basic Principles of Writing Cross-Platform Code</a></li><li class="chapter-item expanded "><a href="u02-11-cp-options-in-go.html"><strong aria-hidden="true">2.9.2.</strong> Cross-Platform Options in Go</a></li></ol></li><li class="chapter-item expanded "><a href="u02-12-cp-package-and-file-organisation.html"><strong aria-hidden="true">2.10.</strong> Package and File Organisation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="u02-13-cp-keep-code-at-minimum.html"><strong aria-hidden="true">2.10.1.</strong> Keep Platform-Dependent Code at Minimum</a></li><li class="chapter-item expanded "><a href="u02-14-cp-simple-branching.html"><strong aria-hidden="true">2.10.2.</strong> Use Simple Branching in Trivial Cases</a></li><li class="chapter-item expanded "><a href="u02-15-cp-no-platform-code-in-main.html"><strong aria-hidden="true">2.10.3.</strong> No Platform-Specific Code in Main</a></li><li class="chapter-item expanded "><a href="u02-16-cp-file-suffix-by-default.html"><strong aria-hidden="true">2.10.4.</strong> Use File Suffix by Default</a></li><li class="chapter-item expanded "><a href="u02-17-cp-build-tags-in-mixed-cases.html"><strong aria-hidden="true">2.10.5.</strong> Use Build Tags in Mixed Cases</a></li><li class="chapter-item expanded "><a href="u02-18-cp-advanced-example.html"><strong aria-hidden="true">2.10.6.</strong> An Advanced Example</a></li><li class="chapter-item expanded "><a href="u02-19-cp-platform-independent-tests.html" class="active"><strong aria-hidden="true">2.10.7.</strong> Strive for Platform-Independent Tests</a></li><li class="chapter-item expanded "><a href="u02-20-cp-cross-platform-tests.html"><strong aria-hidden="true">2.10.8.</strong> Provide Cross-Platform Tests Only When You Must</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.11.</strong> Summary</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> File Layout</div></li><li class="chapter-item expanded affix "><li class="part-title">Foundation</li><li class="chapter-item expanded affix "><li class="part-title">Application Design</li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Golocron – Software Development With Go</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h3 id="strive-for-platform-independent-tests"><a class="header" href="#strive-for-platform-independent-tests">Strive for Platform-Independent Tests</a></h3>
+<p>Write platform-independent tests whenever possible.</p>
+<p>This suggestion is corollary to and supports the previous two guidelines. Maintenance of multi-platform code is not a trivial business, and has its cost. By making sure that the code is designed to be as much as possible independent of the platform it's run on, and only really low-level parts do differ, we have hopefully reduced the cost. But the code has to be tested, and since tests are also code, the same rules apply.</p>
+<p>Platform-independent approach to tests works best in a case where the result of an operation or behaviour must be the same across all platforms despite different low-level implementation details. In such a case, the low-level code does not necessarily need to be covered, as long as tests are run against all target platforms.</p>
+<p>To illustrate this, let's slightly update our example. We'll add a feature that has to work uniformly across all platforms, but will have three different implementations. Let's say we need to add a fourth feature which prints <code>&quot;this feature has different implementations but yields the same result&quot;</code> on all three supported operating systems (here, as in <code>GOOS</code>).</p>
+<p>This is what the code looks like:</p>
+<ul>
+<li>this is our platform-independent high-level code, <code>something.go</code>:</li>
+</ul>
+<pre><code class="language-golang">package something
+
+import (
+	&quot;fmt&quot;
+)
+
+const (
+	Feature1 = &quot;common feature for all platforms&quot;
+)
+
+func RunFeature4() {
+	fmt.Println(Feature4())
+}
+
+func Feature4() string {
+	return doFeature4()
+}
+</code></pre>
+<p>Notice the <code>RunFeature4</code> function which internally calls the <code>doFeature4</code> function. Where is it declared? It's not declared in any file that is visible for all platforms simultaneously. Instead, each of the platforms has its own implementation. Here we go:</p>
+<ul>
+<li>for <code>darwin</code>, <code>something_darwin.go</code>:</li>
+</ul>
+<pre><code class="language-golang">package something
+
+import (
+	&quot;fmt&quot;
+)
+
+var (
+	feature4 = []byte(`this feature has different implementations but yields the same result`)
+)
+
+func DoFeature3() {
+	fmt.Println(&quot;this is a unique feature for the mac&quot;)
+}
+
+func doFeature4() string {
+	return string(feature4)
+}
+</code></pre>
+<p>Here, the special implementation of <code>doFeature4</code> uses the slice of <code>byte</code>s as the source.</p>
+<ul>
+<li>for <code>linux</code>, <code>something_linux.go</code>:</li>
+</ul>
+<pre><code class="language-golang">package something
+
+func DoFeature3() {}
+
+func doFeature4() string {
+	return &quot;this feature has different implementations but yields the same result&quot;
+}
+</code></pre>
+<p>In the world of Linux, things are often more straightforward. We just return a <code>string</code>.</p>
+<ul>
+<li>here is <code>windows</code>, <code>something_windows.go</code>:</li>
+</ul>
+<pre><code class="language-golang">package something
+
+const (
+	Feature2 = &quot;this is a windows specific version&quot;
+)
+
+var (
+	feature4 = []rune(`this feature has different implementations but yields the same result`)
+)
+
+func DoFeature3() {}
+
+func doFeature4() string {
+	return string(feature4)
+}
+</code></pre>
+<p>In Windows, our implementation is based on a slice of <code>rune</code>s.</p>
+<ul>
+<li>finally, this is how the feature is used, <code>main.go</code>:</li>
+</ul>
+<pre><code class="language-golang">package main
+
+import (
+	&quot;fmt&quot;
+
+	&quot;../../something&quot;
+)
+
+func main() {
+	fmt.Println(something.Feature1)
+	fmt.Println(something.Feature2)
+
+	something.DoFeature3()
+	something.RunFeature4()
+}
+</code></pre>
+<ul>
+<li>building and running:</li>
+</ul>
+<pre><code class="language-bash"># Darwin.
+$ GOOS=darwin go build -o bin/myapp-darwin ./cmd/myapp
+$ ./bin/myapp-darwin
+common feature for all platforms
+this is a version supported by a number of unix-like systems
+this is a unique feature for the mac
+this feature has different implementations but yields the same result
+
+# Linux.
+$ GOOS=linux go build -o bin/myapp-linux ./cmd/myapp
+$ docker run -it --rm -v $(pwd)/bin:/root/bin/ alpine:3.13 ash
+% /root/bin/myapp-linux
+common feature for all platforms
+this is a version supported by a number of unix-like systems
+this feature has different implementations but yields the same result
+</code></pre>
+<p>The output suggests that the feature works as expected. But how can we prove it remains working over time, especially given that changes to software are made often, not to mention that platforms do not stand still too, and are being constantly updated? Of course, with tests. In this case, the outcome is and must be exactly the same for all platforms. So this outcome <strong>is the result</strong> we want to make sure is always correct, not the implementation detail. If something happens to the implementation, then the broken test will highlight it.</p>
+<p>In cases like this, <strong>write platform-independent</strong> tests.</p>
+<p>To illustrate this situation, here are two example tests:</p>
+<ul>
+<li>the first checks the feature itself</li>
+<li>the second tests how it works end-to-end.</li>
+</ul>
+<p>Here is the <code>something_test.go</code> file, which is in effect on all platforms:</p>
+<pre><code class="language-golang">package something_test
+
+import (
+	&quot;bufio&quot;
+	&quot;os&quot;
+	&quot;strings&quot;
+	&quot;testing&quot;
+
+	&quot;../something&quot;
+)
+
+func TestFeature4(t *testing.T) {
+	exp := &quot;this feature has different implementations but yields the same result&quot;
+	act := something.Feature4()
+
+	if act != exp {
+		t.Errorf(&quot;expected: %s, got: %s\n&quot;, exp, act)
+	}
+}
+
+func TestRunFeature4(t *testing.T) {
+	stdout := os.Stdout
+	r, w, err := os.Pipe()
+	if err != nil {
+		t.Errorf(&quot;failed to create reader and writer: %s\n&quot;, err)
+		t.FailNow()
+	}
+
+	os.Stdout = w
+	something.RunFeature4()
+
+	b := bufio.NewReader(r)
+	out, err := b.ReadString('\n')
+	if err != nil {
+		t.Errorf(&quot;failed to read from reader: %s\n&quot;, err)
+		t.FailNow()
+	}
+
+	if err := w.Close(); err != nil {
+		t.Errorf(&quot;failed to close writer: %s\n&quot;, err)
+		t.FailNow()
+	}
+
+	os.Stdout = stdout
+
+	exp := &quot;this feature has different implementations but yields the same result&quot;
+	if act := strings.TrimSuffix(out, &quot;\n&quot;); act != exp {
+		t.Errorf(&quot;expected: %q, got: %q\n&quot;, exp, act)
+	}
+}
+</code></pre>
+<p>Notice how neither of the two tests has any knowledge about the platform-specific code. In the first test, <code>TestFeature4</code>, we check that the feature is implemented correctly. The second test, <code>TestRunFeature4</code>, does a full check, including capturing the result from the standard output.</p>
+<p>Here are test results:</p>
+<ul>
+<li>on macOS:</li>
+</ul>
+<pre><code class="language-bash">$ go test ./something/... -v
+=== RUN   TestFeature4
+--- PASS: TestFeature4 (0.00s)
+=== RUN   TestRunFeature4
+--- PASS: TestRunFeature4 (0.00s)
+PASS
+ok  	_/Users/user/projects/xplatform/something	0.005s
+</code></pre>
+<ul>
+<li>and on Linux, using the <code>golang:1.15</code> image:</li>
+</ul>
+<pre><code class="language-bash">$ docker run -it --rm -v $(pwd):/root/xplatform golang:1.15 bash
+% cd /root/xplatform/
+% go test ./something/... -v
+=== RUN   TestFeature4
+--- PASS: TestFeature4 (0.00s)
+=== RUN   TestRunFeature4
+--- PASS: TestRunFeature4 (0.00s)
+PASS
+ok  	_/root/xplatform/something 0.003s
+</code></pre>
+<p>The output is exactly the same, and tests pass in both cases. And that's what we should strive for.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="u02-18-cp-advanced-example.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="u02-20-cp-cross-platform-tests.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="u02-18-cp-advanced-example.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="u02-20-cp-cross-platform-tests.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
